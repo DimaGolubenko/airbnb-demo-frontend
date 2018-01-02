@@ -1,18 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "../styled";
+import { List, Title } from "../styled";
 import img1 from "./Explore-1.png";
 import img2 from "./Explore-2.png";
 import img3 from "./Explore-3.png";
 
-const List = styled.div`
-  display: flex;
-  display-wrap: wrap;
-  width: 100%;
-`;
+const Explore = styled.section``;
 
 const Card = styled.div`
-  height: 4.5rem;
   border: 1px solid rgba(72, 72, 72, 0.2);
 `;
 
@@ -37,7 +32,7 @@ const CardTitle = styled.span`
 
 export default () => {
   return (
-    <section className="explore">
+    <Explore>
       <Title>Explore Airbnb</Title>
       <div className="row">
         <List>
@@ -67,6 +62,6 @@ export default () => {
           </div>
         </List>
       </div>
-    </section>
+    </Explore>
   );
 };

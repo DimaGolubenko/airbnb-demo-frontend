@@ -1,29 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "../styled";
-import img1 from "./Expiriences-1.png";
-import img2 from "./Expiriences-2.png";
-import img3 from "./Expiriences-3.png";
-import img4 from "./Expiriences-4.png";
+import { List, Card, Link, SeeAll, Image, SliderArrow } from "../styled";
+import StarsList from "../../common/StarsList";
+import img1 from "./experiences-1.png";
+import img2 from "./experiences-2.png";
+import img3 from "./experiences-3.png";
+import img4 from "./experiences-4.png";
 
-const List = styled.div`
-  display: flex;
-  display-wrap: wrap;
-  width: 100%;
-`;
+const Experiences = styled.section``;
 
-const Card = styled.div`
-  height: 4.5rem;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-`;
-
-const Link = styled.a`
-  display: block;
-`;
-
-const Image = styled.img`
-  display: block;
-  margin-bottom: 0.5rem;
+const Arrow = SliderArrow.extend`
+  top: 9.5rem;
 `;
 
 const Price = styled.span`
@@ -36,40 +24,88 @@ const CardTitle = styled.span`
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   font-size: 1rem;
-  line-height: 4.5rem;
-  color: #383838;
+  line-height: 1.2rem;
 `;
 
-const StarsList = styled.span``;
-
-const Star = styled.span``;
+const Reviews = styled.span`
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+`;
 
 export default () => {
   return (
-    <section className="explore">
-      <Title>Experiences</Title>
+    <Experiences>
+      <Title>
+        Experiences
+        <SeeAll href="/">See all</SeeAll>
+      </Title>
       <div className="row">
         <List>
           <div className="col-lg-3">
             <Card>
-              <Link href="#">
+              <Link href="/">
                 <Image src={img1} alt="" />
                 <Price>$29</Price>
-                <CardTitle>$29 Forest therapy</CardTitle>
+                <CardTitle>Forest therapy</CardTitle>
               </Link>
               <div>
-                <StarsList>
-                  <Star />
-                  <Star />
-                  <Star />
-                  <Star />
-                  <Star />
-                </StarsList>
+                <StarsList />
+                <Reviews>44 reviews</Reviews>
               </div>
             </Card>
           </div>
+
+          <div className="col-lg-3">
+            <Card>
+              <Link href="/">
+                <Image src={img2} alt="" />
+              </Link>
+              <Link href="/">
+                <Price>$69</Price>
+                <CardTitle>Whale watching</CardTitle>
+              </Link>
+              <div>
+                <StarsList />
+                <Reviews>46 reviews</Reviews>
+              </div>
+            </Card>
+          </div>
+
+          <div className="col-lg-3">
+            <Card>
+              <Link href="/">
+                <Image src={img3} alt="" />
+              </Link>
+              <Link href="/">
+                <Price>$69</Price>
+                <CardTitle>Table Mountain Summit, Cable Car Down</CardTitle>
+              </Link>
+              <div>
+                <StarsList />
+                <Reviews>44 reviews</Reviews>
+              </div>
+            </Card>
+          </div>
+
+          <div className="col-lg-3">
+            <Card>
+              <Link href="/">
+                <Image src={img4} alt="" />
+              </Link>
+              <Link href="/">
+                <Price>$50</Price>
+                <CardTitle>Salsa Night</CardTitle>
+              </Link>
+              <div>
+                <StarsList />
+                <Reviews>44 reviews</Reviews>
+              </div>
+            </Card>
+          </div>
+
+          <Arrow />
         </List>
       </div>
-    </section>
+    </Experiences>
   );
 };

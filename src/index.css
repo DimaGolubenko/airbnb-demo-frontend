@@ -20,8 +20,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: "CircularAirBook", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #383838;
 }
 
 ul {
   list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #383838;
 }

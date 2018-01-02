@@ -4,14 +4,21 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 
+const Wrap = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 29rem;
+`;
+
 class App extends Component {
   render() {
     return (
-      <div>
+      <Wrap>
         <Header />
         <Main />
         <Footer />
-      </div>
+      </Wrap>
     );
   }
 }

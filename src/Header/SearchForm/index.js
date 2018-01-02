@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import search from "./search.svg";
 
-const Search = styled.input`
+const SearchForm = styled.form``;
+
+const Input = styled.input`
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -22,5 +24,9 @@ const Search = styled.input`
 `;
 
 export default () => {
-  return <Search value="Try “Miami”" />;
+  return (
+    <SearchForm>
+      <Input type="text" name="search" placeholder="Try “Miami”" />
+    </SearchForm>
+  );
 };
