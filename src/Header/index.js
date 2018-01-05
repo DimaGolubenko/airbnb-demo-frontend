@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import SearchForm from "./SearchForm";
 import Nav from "./Nav";
 
-const Header = styled.div`
+const Header = styled.header`
   height: 5rem;
   display: flex;
   align-items: center;

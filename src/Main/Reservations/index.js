@@ -18,7 +18,7 @@ const Category = styled.span`
   text-transform: uppercase;
 `;
 
-const CardTitle = styled.span`
+const CardTitle = styled.h2`
   display: block;
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1rem;

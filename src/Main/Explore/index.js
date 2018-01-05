@@ -23,7 +23,7 @@ const Image = styled.img`
   margin-right: 1.5rem;
 `;
 
-const CardTitle = styled.span`
+const CardTitle = styled.h2`
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 4.5rem;

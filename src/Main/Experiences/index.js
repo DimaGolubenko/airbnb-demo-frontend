@@ -20,7 +20,7 @@ const Price = styled.span`
   padding-right: 0.5rem;
 `;
 
-const CardTitle = styled.span`
+const CardTitle = styled.h2`
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   font-size: 1rem;

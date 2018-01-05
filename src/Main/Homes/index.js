@@ -9,7 +9,7 @@ import img3 from "./homes-3.png";
 
 const Homes = styled.section``;
 
-const CardTitle = styled.div`
+const CardTitle = styled.h2`
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.2rem;

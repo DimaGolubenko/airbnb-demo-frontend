@@ -10,7 +10,7 @@ import img6 from "./destinations-6.png";
 
 const Destinations = styled.section``;
 
-const City = styled.span`
+const City = styled.h2`
   display: block;
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
