@@ -46,22 +46,18 @@ export const Hr = styled.hr`
 
 export const Nav = styled.nav``;
 
+export const Link = styled.a`
+  display: block;
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #636363;
+`;
+
 export const Title = styled.h3`
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   margin-bottom: 1rem;
-`;
-
-export const List = styled.ul``;
-
-export const Item = styled.li`
-  line-height: 1.25rem;
-  margin-bottom: 0.5rem;
-`;
-
-export const Link = styled.a`
-  font-size: 1rem;
-  color: #636363;
 `;
 
 export const Bottom = styled.div`

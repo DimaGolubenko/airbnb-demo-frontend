@@ -1,19 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Nav = styled.nav``;
-
-const List = styled.ul`
+const Nav = styled.nav`
   display: flex;
   margin-right: 1rem;
 `;
 
-const Item = styled.li`
+const Link = styled.a`
   margin-left: 1rem;
   line-height: 1rem;
-`;
-
-const Link = styled.a`
   font-size: 0.75rem;
   color: #636363;
 `;
@@ -21,17 +16,9 @@ const Link = styled.a`
 export default () => {
   return (
     <Nav>
-      <List>
-        <Item>
-          <Link href="/">Terms</Link>
-        </Item>
-        <Item>
-          <Link href="/">Privacy</Link>
-        </Item>
-        <Item>
-          <Link href="/">Site map</Link>
-        </Item>
-      </List>
+      <Link href="/">Terms</Link>
+      <Link href="/">Privacy</Link>
+      <Link href="/">Site map</Link>
     </Nav>
   );
 };

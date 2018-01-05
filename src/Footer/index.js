@@ -1,17 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Hr,
-  Nav,
-  Title,
-  List,
-  Item,
-  Link,
-  Bottom,
-  Copyright,
-  Left,
-  Right
-} from "./styled";
+import { Hr, Nav, Title, Link, Bottom, Copyright, Left, Right } from "./styled";
 import LanguageForm from "./LanguageForm";
 import CurrencyForm from "./CurrencyForm";
 import Logo from "./Logo";
@@ -43,75 +32,35 @@ export default () => {
           <div className="col-lg-offset-1 col-lg-2">
             <Nav>
               <Title>Airbnb</Title>
-              <List>
-                <Item>
-                  <Link href="/">About us</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Careers</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Press</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Policies</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Help</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Diversity & Belonging</Link>
-                </Item>
-              </List>
+              <Link href="/">About us</Link>
+              <Link href="/">Careers</Link>
+              <Link href="/">Press</Link>
+              <Link href="/">Policies</Link>
+              <Link href="/">Help</Link>
+              <Link href="/">Diversity & Belonging</Link>
             </Nav>
           </div>
 
           <div className="col-lg-offset-1 col-lg-2">
             <Nav>
               <Title>Discover</Title>
-              <List>
-                <Item>
-                  <Link href="/">Trust & Safety</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Travel Credit</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Gift Cards</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Airbnb Citizen</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Business Travel</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Guidebooks</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Airbnbmag</Link>
-                </Item>
-              </List>
+              <Link href="/">Trust & Safety</Link>
+              <Link href="/">Travel Credit</Link>
+              <Link href="/">Gift Cards</Link>
+              <Link href="/">Airbnb Citizen</Link>
+              <Link href="/">Business Travel</Link>
+              <Link href="/">Guidebooks</Link>
+              <Link href="/">Airbnbmag</Link>
             </Nav>
           </div>
 
           <div className="col-lg-offset-1 col-lg-2">
             <Nav>
               <Title>Hosting</Title>
-              <List>
-                <Item>
-                  <Link href="/">Why Host</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Hospitality</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Responsible Hosting</Link>
-                </Item>
-                <Item>
-                  <Link href="/">Community Center</Link>
-                </Item>
-              </List>
+              <Link href="/">Why Host</Link>
+              <Link href="/">Hospitality</Link>
+              <Link href="/">Responsible Hosting</Link>
+              <Link href="/">Community Center</Link>
             </Nav>
           </div>
         </div>
