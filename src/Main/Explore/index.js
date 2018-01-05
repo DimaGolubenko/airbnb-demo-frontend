@@ -7,14 +7,11 @@ import img3 from "./Explore-3.png";
 
 const Explore = styled.section``;
 
-const Card = styled.div`
-  border: 1px solid rgba(72, 72, 72, 0.2);
-`;
-
-const Link = styled.a`
+const Card = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
+  border: 1px solid rgba(72, 72, 72, 0.2);
 `;
 
 const Image = styled.img`
@@ -37,27 +34,21 @@ export default () => {
       <div className="row">
         <List>
           <div className="col-lg-4">
-            <Card>
-              <Link href="#">
-                <Image src={img1} alt="" />
-                <CardTitle>Homes</CardTitle>
-              </Link>
+            <Card href="/">
+              <Image src={img1} alt="" />
+              <CardTitle>Homes</CardTitle>
             </Card>
           </div>
           <div className="col-lg-4">
-            <Card>
-              <Link href="#">
-                <Image src={img2} alt="" />
-                <CardTitle>Experiences</CardTitle>
-              </Link>
+            <Card href="/">
+              <Image src={img2} alt="" />
+              <CardTitle>Experiences</CardTitle>
             </Card>
           </div>
           <div className="col-lg-4">
-            <Card>
-              <Link href="#">
-                <Image src={img3} alt="" />
-                <CardTitle>Restaurants</CardTitle>
-              </Link>
+            <Card href="/">
+              <Image src={img3} alt="" />
+              <CardTitle>Restaurants</CardTitle>
             </Card>
           </div>
         </List>
