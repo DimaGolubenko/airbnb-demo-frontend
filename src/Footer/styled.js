@@ -18,7 +18,7 @@ export const Select = styled.select`
   cursor: pointer;
 `;
 
-export const FakeSelect = styled.button`
+export const SelectButton = styled.button`
   display: absolute;
   width: 100%;
   height: 3rem;

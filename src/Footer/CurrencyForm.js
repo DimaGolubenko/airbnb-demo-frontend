@@ -1,12 +1,12 @@
 import React from "react";
-import { Form, Select, FakeSelect, Option } from "./styled";
+import { Form, Select, SelectButton, Option } from "./styled";
 
 const CurrencyForm = Form.extend``;
 
 export default () => {
   return (
     <CurrencyForm>
-      <FakeSelect>United States dollar</FakeSelect>
+      <SelectButton>United States dollar</SelectButton>
       <Select name="currency">
         <Option value="United States dollar" selected>
           United States dollar

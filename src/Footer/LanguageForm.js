@@ -1,12 +1,12 @@
 import React from "react";
-import { Form, Select, FakeSelect, Option } from "./styled";
+import { Form, Select, SelectButton, Option } from "./styled";
 
 const LanguageForm = Form.extend``;
 
 export default () => {
   return (
     <LanguageForm>
-      <FakeSelect>English</FakeSelect>
+      <SelectButton>English</SelectButton>
       <Select name="language">
         <Option value="English" selected>
           English
