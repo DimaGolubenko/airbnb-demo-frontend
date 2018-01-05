@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "../styled";
-import { List, Card, Link, SeeAll, Image, SliderArrow } from "../styled";
+import { Slider, Card, Link, SeeAll, Image, SliderArrow } from "../styled";
 import StarsList from "../../common/StarsList";
 import img1 from "./experiences-1.png";
 import img2 from "./experiences-2.png";
 import img3 from "./experiences-3.png";
 import img4 from "./experiences-4.png";
 
-const Experiences = styled.section``;
+const Experiences = styled.section`
+  overflow: hidden;
+`;
 
 const Arrow = SliderArrow.extend`
   top: 9.5rem;
@@ -39,73 +41,71 @@ export default () => {
         Experiences
         <SeeAll href="/">See all</SeeAll>
       </Title>
-      <div className="row">
-        <List>
-          <div className="col-lg-3">
-            <Card>
-              <Link href="/">
-                <Image src={img1} alt="" />
-                <Price>$29</Price>
-                <CardTitle>Forest therapy</CardTitle>
-              </Link>
-              <div>
-                <StarsList />
-                <Reviews>44 reviews</Reviews>
-              </div>
-            </Card>
-          </div>
+      <Slider>
+        <div className="col-md-4 col-lg-3">
+          <Card>
+            <Link href="/">
+              <Image src={img1} alt="" />
+              <Price>$29</Price>
+              <CardTitle>Forest therapy</CardTitle>
+            </Link>
+            <div>
+              <StarsList />
+              <Reviews>44 reviews</Reviews>
+            </div>
+          </Card>
+        </div>
 
-          <div className="col-lg-3">
-            <Card>
-              <Link href="/">
-                <Image src={img2} alt="" />
-              </Link>
-              <Link href="/">
-                <Price>$69</Price>
-                <CardTitle>Whale watching</CardTitle>
-              </Link>
-              <div>
-                <StarsList />
-                <Reviews>46 reviews</Reviews>
-              </div>
-            </Card>
-          </div>
+        <div className="col-md-4 col-lg-3">
+          <Card>
+            <Link href="/">
+              <Image src={img2} alt="" />
+            </Link>
+            <Link href="/">
+              <Price>$69</Price>
+              <CardTitle>Whale watching</CardTitle>
+            </Link>
+            <div>
+              <StarsList />
+              <Reviews>46 reviews</Reviews>
+            </div>
+          </Card>
+        </div>
 
-          <div className="col-lg-3">
-            <Card>
-              <Link href="/">
-                <Image src={img3} alt="" />
-              </Link>
-              <Link href="/">
-                <Price>$69</Price>
-                <CardTitle>Table Mountain Summit, Cable Car Down</CardTitle>
-              </Link>
-              <div>
-                <StarsList />
-                <Reviews>44 reviews</Reviews>
-              </div>
-            </Card>
-          </div>
+        <div className="col-md-4 col-lg-3">
+          <Card>
+            <Link href="/">
+              <Image src={img3} alt="" />
+            </Link>
+            <Link href="/">
+              <Price>$69</Price>
+              <CardTitle>Table Mountain Summit, Cable Car Down</CardTitle>
+            </Link>
+            <div>
+              <StarsList />
+              <Reviews>44 reviews</Reviews>
+            </div>
+          </Card>
+        </div>
 
-          <div className="col-lg-3">
-            <Card>
-              <Link href="/">
-                <Image src={img4} alt="" />
-              </Link>
-              <Link href="/">
-                <Price>$50</Price>
-                <CardTitle>Salsa Night</CardTitle>
-              </Link>
-              <div>
-                <StarsList />
-                <Reviews>44 reviews</Reviews>
-              </div>
-            </Card>
-          </div>
+        <div className="col-md-4 col-lg-3">
+          <Card>
+            <Link href="/">
+              <Image src={img4} alt="" />
+            </Link>
+            <Link href="/">
+              <Price>$50</Price>
+              <CardTitle>Salsa Night</CardTitle>
+            </Link>
+            <div>
+              <StarsList />
+              <Reviews>44 reviews</Reviews>
+            </div>
+          </Card>
+        </div>
 
-          <Arrow />
-        </List>
-      </div>
+        <Arrow />
+      </Slider>
     </Experiences>
   );
 };

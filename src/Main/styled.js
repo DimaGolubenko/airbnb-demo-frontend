@@ -13,11 +13,14 @@ export const Title = styled.h1`
   color: #383838;
 `;
 
-export const List = styled.div`
+export const Slider = styled.div`
   position: relative;
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 `;
 
 export const Card = styled.div``;
@@ -51,7 +54,7 @@ export const SliderArrow = styled.button`
   background-size: 0.6rem 1.1rem;
   background-position: center center;
   border: 0.05rem solid rgba(72, 72, 72, 0.2);
-  box-shadow: 0 0.1rem 0.25rem rgba(72, 72, 72, 0.16);
+  box-shadow: 0 0.125rem 0.25rem rgba(72, 72, 72, 0.16);
   border-radius: 1.25rem;
   cursor: pointer;
 `;

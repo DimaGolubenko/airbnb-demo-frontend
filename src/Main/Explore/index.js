@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { List, Title } from "../styled";
+import { Slider, Title } from "../styled";
 import img1 from "./Explore-1.png";
 import img2 from "./Explore-2.png";
 import img3 from "./Explore-3.png";
 
-const Explore = styled.section``;
+const Explore = styled.section`
+  width: 100%;
+  overflow: hidden;
+`;
 
 const Card = styled.a`
   position: relative;
@@ -40,28 +43,26 @@ export default () => {
   return (
     <Explore>
       <Title>Explore Airbnb</Title>
-      <div className="row">
-        <List>
-          <div className="col-lg-4">
-            <Card href="/">
-              <Image src={img1} alt="" />
-              <CardTitle>Homes</CardTitle>
-            </Card>
-          </div>
-          <div className="col-lg-4">
-            <Card href="/">
-              <Image src={img2} alt="" />
-              <CardTitle>Experiences</CardTitle>
-            </Card>
-          </div>
-          <div className="col-lg-4">
-            <Card href="/">
-              <Image src={img3} alt="" />
-              <CardTitle>Restaurants</CardTitle>
-            </Card>
-          </div>
-        </List>
-      </div>
+      <Slider>
+        <div className="col-md-5 col-lg-4">
+          <Card href="/">
+            <Image src={img1} alt="" />
+            <CardTitle>Homes</CardTitle>
+          </Card>
+        </div>
+        <div className="col-md-5 col-lg-4">
+          <Card href="/">
+            <Image src={img2} alt="" />
+            <CardTitle>Experiences</CardTitle>
+          </Card>
+        </div>
+        <div className="col-md-5 col-lg-4">
+          <Card href="/">
+            <Image src={img3} alt="" />
+            <CardTitle>Restaurants</CardTitle>
+          </Card>
+        </div>
+      </Slider>
     </Explore>
   );
 };
