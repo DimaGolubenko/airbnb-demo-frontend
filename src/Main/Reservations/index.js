@@ -7,7 +7,7 @@ import img3 from "./reservations-3.png";
 import img4 from "./reservations-4.png";
 
 const Reservations = styled.section`
-  overflow: hidden;
+  position: relative;
 `;
 
 const Card = styled(Link)``;
@@ -38,7 +38,7 @@ const AverageCheck = styled.span`
 `;
 
 const Arrow = SliderArrow.extend`
-  top: 3.9rem;
+  top: 7.5rem;
 `;
 
 export default () => {

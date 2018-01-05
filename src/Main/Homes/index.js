@@ -8,7 +8,7 @@ import img2 from "./homes-2.png";
 import img3 from "./homes-3.png";
 
 const Homes = styled.section`
-  overflow: hidden;
+  position: relative;
 `;
 
 const CardTitle = styled.h2`
@@ -32,7 +32,7 @@ const Superhost = styled.span`
 `;
 
 const Arrow = SliderArrow.extend`
-  top: 5.1rem;
+  top: 8.7rem;
 `;
 
 export default () => {

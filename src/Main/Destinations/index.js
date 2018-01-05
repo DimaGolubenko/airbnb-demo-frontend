@@ -11,7 +11,7 @@ import img6 from "./destinations-6.png";
 const Card = styled(Link)``;
 
 const Destinations = styled.section`
-  overflow: hidden;
+  position: relative;
 `;
 
 const City = styled.h2`
@@ -22,7 +22,7 @@ const City = styled.h2`
 `;
 
 const Arrow = SliderArrow.extend`
-  top: 5.6rem;
+  top: 9.2rem;
 `;
 
 export default () => {

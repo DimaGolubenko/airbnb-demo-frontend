@@ -6,8 +6,7 @@ import img2 from "./Explore-2.png";
 import img3 from "./Explore-3.png";
 
 const Explore = styled.section`
-  width: 100%;
-  overflow: hidden;
+  position: relative;
 `;
 
 const Card = styled.a`

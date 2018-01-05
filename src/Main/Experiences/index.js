@@ -9,11 +9,11 @@ import img3 from "./experiences-3.png";
 import img4 from "./experiences-4.png";
 
 const Experiences = styled.section`
-  overflow: hidden;
+  position: relative;
 `;
 
 const Arrow = SliderArrow.extend`
-  top: 9.5rem;
+  top: 13.1rem;
 `;
 
 const Price = styled.span`
@@ -103,9 +103,8 @@ export default () => {
             </div>
           </Card>
         </div>
-
-        <Arrow />
       </Slider>
+      <Arrow />
     </Experiences>
   );
 };

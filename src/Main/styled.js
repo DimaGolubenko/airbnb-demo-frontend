@@ -14,13 +14,13 @@ export const Title = styled.h1`
 `;
 
 export const Slider = styled.div`
-  position: relative;
   box-sizing: border-box;
   display: flex;
   flex: 0 1 auto;
   flex-wrap: nowrap;
   margin-left: -0.5rem;
   margin-right: -0.5rem;
+  overflow: hidden;
 `;
 
 export const Card = styled.div``;
@@ -44,7 +44,7 @@ export const SeeAll = styled.a`
 export const SliderArrow = styled.button`
   position: absolute;
   top: center;
-  right: -0.75rem;
+  right: -1.25rem;
   width: 2.5rem;
   height: 2.5rem;
   box-sizing: border-box;
