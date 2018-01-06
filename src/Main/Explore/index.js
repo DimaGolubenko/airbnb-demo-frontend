@@ -29,7 +29,7 @@ const Card = styled.a`
 const Image = styled.img`
   display: block;
   width: 100%;
-  height: 78px;
+  height: auto;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 
