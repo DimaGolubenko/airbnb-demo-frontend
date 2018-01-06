@@ -35,6 +35,7 @@ export const Link = styled.a`
 `;
 
 export const SeeAll = styled.a`
+  white-space: nowrap;
   padding-right: 1rem;
   font-size: 0.8rem;
   font-family: "CircularAirBook", "Helvetica Neue", Helvetica, Arial, sans-serif;
