@@ -4,9 +4,7 @@ import Logo from "./Logo";
 import SearchForm from "./SearchForm";
 import Nav from "./Nav";
 
-const Wrapper = styled.div``;
-
-const Header = styled.header`
+const Wrapper = styled.div`
   padding: 1rem 0;
   display: flex;
   width: 100%;
@@ -15,16 +13,18 @@ const Header = styled.header`
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
 `;
 
+const Header = styled.header``;
+
 export default () => {
   return (
-    <Wrapper>
+    <Header>
       <div className="container">
-        <Header>
+        <Wrapper>
           <Logo />
           <SearchForm />
           <Nav />
-        </Header>
+        </Wrapper>
       </div>
-    </Wrapper>
+    </Header>
   );
 };
