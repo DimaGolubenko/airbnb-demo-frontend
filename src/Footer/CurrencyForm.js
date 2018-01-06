@@ -8,9 +8,7 @@ export default () => {
     <CurrencyForm>
       <SelectButton>United States dollar</SelectButton>
       <Select name="currency">
-        <Option value="United States dollar" selected>
-          United States dollar
-        </Option>
+        <Option value="United States dollar">United States dollar</Option>
       </Select>
     </CurrencyForm>
   );

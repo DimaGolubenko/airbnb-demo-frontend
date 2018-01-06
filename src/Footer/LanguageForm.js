@@ -8,9 +8,7 @@ export default () => {
     <LanguageForm>
       <SelectButton>English</SelectButton>
       <Select name="language">
-        <Option value="English" selected>
-          English
-        </Option>
+        <Option value="English">English</Option>
       </Select>
     </LanguageForm>
   );
