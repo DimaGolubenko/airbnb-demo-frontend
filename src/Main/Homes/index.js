@@ -23,7 +23,7 @@ const CardTitle = styled.h2`
   }
 `;
 
-const Description = styled.div`
+const Description = styled.p`
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   font-size: 1rem;
