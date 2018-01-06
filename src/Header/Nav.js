@@ -2,10 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 const Nav = styled.nav`
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.9rem;
-  line-height: 1.5rem;
+  display: none;
+
+  @media (min-width: 992px) {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
 `;
 
 const Link = styled.a`

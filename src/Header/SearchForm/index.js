@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import search from "./search.svg";
 
-const SearchForm = styled.form``;
+const SearchForm = styled.form`
+  box-sizing: border-box;
+  width: 100%;
+  margin-right: 0.5rem;
+`;
 
 const Input = styled.input`
   box-sizing: border-box;
-  display: block;
   width: 100%;
+  margin-left: 0.5rem;
   padding-left: 3.3rem;
   line-height: 3rem;
   color: #383838;
@@ -20,6 +24,16 @@ const Input = styled.input`
   background-position: 1rem center;
   background-repeat: no-repeat;
   opacity: 0.64;
+
+  @media (min-width: 768px) {
+    margin-left: 1rem;
+    width: 27rem;
+  }
+
+  @media (min-width: 992px) {
+    margin-left: 4.25rem;
+    width: 24.5rem;
+  }
 `;
 
 export default () => {
