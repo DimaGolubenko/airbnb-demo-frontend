@@ -12,30 +12,47 @@ const Explore = styled.section`
 const Card = styled.a`
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   box-sizing: border-box;
-  height: 4.5rem;
   text-decoration: none;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  border-radius: 4px;
+  border: 0.0625rem solid rgba(72, 72, 72, 0.2);
+  box-shadow: 0 0.125rem 0.25rem rgba(72, 72, 72, 0.08);
+  border-radius: 0.25rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    height: 4.5rem;
+    align-items: center;
+  }
 `;
 
 const Image = styled.img`
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  width: 6rem;
-  height: 4.5rem;
-  margin-right: 1.5rem;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  display: block;
+  width: 100%;
+  height: 78px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+
+  @media (min-width: 768px) {
+    width: 6rem;
+    height: 4.5rem;
+    margin-left: -0.0625rem;
+    margin-top: -0.0625rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
 `;
 
 const CardTitle = styled.h2`
-  padding-left: 7.5rem;
+  padding-left: 0.75rem;
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: #383838;
+
+  @media (min-width: 768px) {
+    padding-left: 1.5rem;
+    font-size: 1rem;
+  }
 `;
 
 export default () => {
@@ -43,19 +60,19 @@ export default () => {
     <Explore>
       <Title>Explore Airbnb</Title>
       <Slider>
-        <div className="col-md-5 col-lg-4">
+        <div className="col-xs-6 col-md-5 col-lg-4">
           <Card href="/">
             <Image src={img1} alt="" />
             <CardTitle>Homes</CardTitle>
           </Card>
         </div>
-        <div className="col-md-5 col-lg-4">
+        <div className="col-xs-6 col-md-5 col-lg-4">
           <Card href="/">
             <Image src={img2} alt="" />
             <CardTitle>Experiences</CardTitle>
           </Card>
         </div>
-        <div className="col-md-5 col-lg-4">
+        <div className="col-xs-6 col-md-5 col-lg-4">
           <Card href="/">
             <Image src={img3} alt="" />
             <CardTitle>Restaurants</CardTitle>

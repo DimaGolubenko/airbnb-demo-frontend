@@ -17,8 +17,13 @@ const Destinations = styled.section`
 const City = styled.h2`
   display: block;
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
 `;
 
 const Arrow = SliderArrow.extend`
@@ -30,42 +35,42 @@ export default () => {
     <Destinations>
       <Title>Featured destinations</Title>
       <Slider>
-        <div className="col-md-3 col-lg-2">
+        <div className="col-xs-4 col-md-3 col-lg-2">
           <Card href="/">
             <Image src={img1} alt="" />
             <City>Paris</City>
           </Card>
         </div>
 
-        <div className="col-md-3 col-lg-2">
+        <div className="col-xs-4 col-md-3 col-lg-2">
           <Card href="/">
             <Image src={img2} alt="" />
             <City>Miami</City>
           </Card>
         </div>
 
-        <div className="col-md-3 col-lg-2">
+        <div className="col-xs-4 col-md-3 col-lg-2">
           <Card href="/">
             <Image src={img3} alt="" />
             <City>Tokyo</City>
           </Card>
         </div>
 
-        <div className="col-md-3 col-lg-2">
+        <div className="col-xs-4 col-md-3 col-lg-2">
           <Card href="/">
             <Image src={img4} alt="" />
             <City>Cape town</City>
           </Card>
         </div>
 
-        <div className="col-md-3 col-lg-2">
+        <div className="col-xs-4 col-md-3 col-lg-2">
           <Card href="/">
             <Image src={img5} alt="" />
             <City>Seoul</City>
           </Card>
         </div>
 
-        <div className="col-md-3 col-lg-2">
+        <div className="col-xs-4 col-md-3 col-lg-2">
           <Card href="/">
             <Image src={img6} alt="" />
             <City>Los Angeles</City>

@@ -5,20 +5,21 @@ import Main from "./Main";
 import Footer from "./Footer";
 
 const Wrap = styled.div`
-  position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  padding-bottom: 29rem;
 `;
 
 class App extends Component {
   render() {
     return (
-      <Wrap>
-        <Header />
-        <Main />
+      <div>
+        <Wrap>
+          <Header />
+          <Main />
+        </Wrap>
         <Footer />
-      </Wrap>
+      </div>
     );
   }
 }

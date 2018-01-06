@@ -15,19 +15,29 @@ const Card = styled(Link)``;
 const Category = styled.span`
   display: block;
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.6rem;
-  line-height: 0.75px;
+  font-size: 0.5rem;
+  line-height: 0.6px;
   margin-top: 1rem;
   margin-bottom: 0.3rem;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 0.6rem;
+    line-height: 0.75px;
+  }
 `;
 
 const CardTitle = styled.h2`
   display: block;
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1rem;
   margin-bottom: 0.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
 `;
 
 const AverageCheck = styled.span`
@@ -35,6 +45,13 @@ const AverageCheck = styled.span`
   line-height: 1rem;
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
 `;
 
 const Arrow = SliderArrow.extend`
@@ -49,7 +66,7 @@ export default () => {
         <SeeAll href="/">See all</SeeAll>
       </Title>
       <Slider>
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card href="/">
             <Image src={img1} alt="" />
             <Category>Speakeasy</Category>
@@ -57,7 +74,7 @@ export default () => {
             <AverageCheck>About $60 per person</AverageCheck>
           </Card>
         </div>
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card href="/">
             <Image src={img2} alt="" />
             <Category>Korean gastropub</Category>
@@ -65,7 +82,7 @@ export default () => {
             <AverageCheck>About $50 per person</AverageCheck>
           </Card>
         </div>
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card href="/">
             <Image src={img3} alt="" />
             <Category>German american</Category>
@@ -73,7 +90,7 @@ export default () => {
             <AverageCheck>About $55 per person</AverageCheck>
           </Card>
         </div>
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card href="/">
             <Image src={img4} alt="" />
             <Category>Fine seafood</Category>

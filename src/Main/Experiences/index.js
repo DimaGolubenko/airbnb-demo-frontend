@@ -23,10 +23,17 @@ const Price = styled.span`
 `;
 
 const CardTitle = styled.h2`
+  display: inline;
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
-  font-size: 1rem;
+  font-size: 0.75rem;
+  font-weight: normal;
   line-height: 1.2rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
 `;
 
 const Reviews = styled.span`
@@ -42,7 +49,7 @@ export default () => {
         <SeeAll href="/">See all</SeeAll>
       </Title>
       <Slider>
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card>
             <Link href="/">
               <Image src={img1} alt="" />
@@ -56,7 +63,7 @@ export default () => {
           </Card>
         </div>
 
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card>
             <Link href="/">
               <Image src={img2} alt="" />
@@ -72,7 +79,7 @@ export default () => {
           </Card>
         </div>
 
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card>
             <Link href="/">
               <Image src={img3} alt="" />
@@ -88,7 +95,7 @@ export default () => {
           </Card>
         </div>
 
-        <div className="col-md-4 col-lg-3">
+        <div className="col-xs-6 col-md-4 col-lg-3">
           <Card>
             <Link href="/">
               <Image src={img4} alt="" />

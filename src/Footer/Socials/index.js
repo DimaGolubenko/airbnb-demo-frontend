@@ -5,15 +5,25 @@ import twitter from "./twitter.svg";
 import instagram from "./instagram.svg";
 
 const Socials = styled.div`
-  display: inline-block;
+  display: flex;
+  align-items: center;
 `;
 
 const Icon = styled.a`
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
   margin-left: 0.75rem;
   background-size: cover;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 `;
 
 const Facebook = Icon.extend`

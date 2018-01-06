@@ -3,14 +3,26 @@ import styled from "styled-components";
 
 const Nav = styled.nav`
   display: flex;
-  margin-right: 1rem;
+  margin-right: 0.75rem;
+
+  @media (min-width: 768px) {
+    margin-right: 1.5rem;
+  }
 `;
 
 const Link = styled.a`
-  margin-left: 1rem;
+  margin-right: 0.75rem;
   line-height: 1rem;
   font-size: 0.75rem;
   color: #636363;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: 768px) {
+    margin-right: 1rem;
+  }
 `;
 
 export default () => {

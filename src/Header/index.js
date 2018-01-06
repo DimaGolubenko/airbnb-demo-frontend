@@ -17,13 +17,13 @@ export default () => {
     <Header>
       <div className="container">
         <div className="row">
-          <div className="col-lg-1">
+          <div className="col-xs-2 col-md-1 col-lg-1">
             <Logo />
           </div>
-          <div className="col-lg-5">
+          <div className="col-xs-10 col-md-7 col-lg-5">
             <SearchForm />
           </div>
-          <div className="col-lg-6">
+          <div className="hidden-xs hidden-sm hidden-md col-lg-6">
             <Nav />
           </div>
         </div>

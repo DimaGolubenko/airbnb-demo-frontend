@@ -13,17 +13,26 @@ const Homes = styled.section`
 
 const CardTitle = styled.h2`
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   margin-bottom: 0.1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
 `;
 
 const Description = styled.div`
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   font-size: 1rem;
-  line-height: 1.2rem;
-  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  @media (min-width: 768px) {
+    line-height: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
 `;
 
 const Superhost = styled.span`
@@ -43,7 +52,7 @@ export default () => {
         <SeeAll href="/">See all</SeeAll>
       </Title>
       <Slider>
-        <div className="col-md-5 col-lg-4">
+        <div className="col-xs-8 col-md-5 col-lg-4">
           <Card>
             <Link href="/">
               <Image src={img1} alt="" />
@@ -54,7 +63,7 @@ export default () => {
             <Superhost>97 &#183; Superhost</Superhost>
           </Card>
         </div>
-        <div className="col-md-5 col-lg-4">
+        <div className="col-xs-8 col-md-5 col-lg-4">
           <Card>
             <Link href="/">
               <Image src={img2} alt="" />
@@ -67,7 +76,7 @@ export default () => {
             <Superhost>161 &#183; Superhost</Superhost>
           </Card>
         </div>
-        <div className="col-md-5 col-lg-4">
+        <div className="col-xs-8 col-md-5 col-lg-4">
           <Card>
             <Link href="/">
               <Image src={img3} alt="" />

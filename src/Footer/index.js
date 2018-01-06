@@ -8,15 +8,21 @@ import BottomNav from "./BottomNav";
 import Socials from "./Socials";
 
 const Footer = styled.footer`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  box-sizing: border-box;
-  width: 100%;
-  height: 25rem;
-  padding-top: 3rem;
+  flex: 0 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 2.5rem;
   background-color: #fff;
   box-shadow: 0px -0.03rem 0 rgba(72, 72, 72, 0.3);
+
+  @media (min-width: 768px) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.75rem;
+    margin-top: 4rem;
+  }
+  @media (min-width: 992px) {
+    padding-bottom: 2.125rem;
+  }
 `;
 
 export default () => {
@@ -24,12 +30,18 @@ export default () => {
     <Footer>
       <div className="container">
         <div className="row">
-          <div className="col-lg-3">
-            <LanguageForm />
-            <CurrencyForm />
+          <div className="col-xs-12 col-md-3">
+            <div className="row">
+              <div className="col-xs-6 col-md-12">
+                <LanguageForm />
+              </div>
+              <div className="col-xs-6 col-md-12">
+                <CurrencyForm />
+              </div>
+            </div>
           </div>
 
-          <div className="col-lg-offset-1 col-lg-2">
+          <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
             <Nav>
               <Title>Airbnb</Title>
               <Link href="/">About us</Link>
@@ -41,7 +53,7 @@ export default () => {
             </Nav>
           </div>
 
-          <div className="col-lg-offset-1 col-lg-2">
+          <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
             <Nav>
               <Title>Discover</Title>
               <Link href="/">Trust & Safety</Link>
@@ -54,7 +66,7 @@ export default () => {
             </Nav>
           </div>
 
-          <div className="col-lg-offset-1 col-lg-2">
+          <div className="hidden-xs hidden-sm col-md-offset-1 col-md-2">
             <Nav>
               <Title>Hosting</Title>
               <Link href="/">Why Host</Link>
