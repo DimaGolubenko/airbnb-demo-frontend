@@ -8,7 +8,6 @@ const Input = styled.input`
   box-sizing: border-box;
   display: block;
   width: 100%;
-  height: 3rem;
   padding-left: 3.3rem;
   line-height: 3rem;
   color: #383838;

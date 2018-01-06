@@ -5,7 +5,7 @@ import SearchForm from "./SearchForm";
 import Nav from "./Nav";
 
 const Header = styled.header`
-  height: 5rem;
+  padding: 1rem 0;
   display: flex;
   align-items: center;
   background: #fff;

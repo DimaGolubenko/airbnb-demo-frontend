@@ -19,7 +19,7 @@ export const Select = styled.select`
 `;
 
 export const SelectButton = styled.button`
-  display: absolute;
+  display: block;
   width: 100%;
   height: 3rem;
   padding-left: 0.5rem;

@@ -21,7 +21,6 @@ const Card = styled.a`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    height: 4.5rem;
     align-items: center;
   }
 `;
@@ -35,15 +34,18 @@ const Image = styled.img`
 
   @media (min-width: 768px) {
     width: 6rem;
-    height: 4.5rem;
     margin-left: -0.0625rem;
     margin-top: -0.0625rem;
+    margin-bottom: -0.0625rem;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
   }
 `;
 
 const CardTitle = styled.h2`
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 0.75rem;
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
