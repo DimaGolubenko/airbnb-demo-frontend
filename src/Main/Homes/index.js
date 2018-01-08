@@ -27,9 +27,11 @@ export default () => {
           <Card
             link="/"
             image={img1}
-            title="$82 La Salentina, see, nature & relax"
-            descriptin="Entire house &#183; 9 beds"
-            superhost="97 &#183; Superhost"
+            price="$82"
+            title="La Salentina, see, nature & relax"
+            type="house"
+            beds="9 beds"
+            superhost="97"
           />
         </div>
 
@@ -37,9 +39,11 @@ export default () => {
           <Card
             link="/"
             image={img2}
-            title="$82 Your private 3 bedr. riad and exclusi..."
-            descriptin="Entire house &#183; 5 beds"
-            superhost="161 &#183; Superhost"
+            price="$82"
+            title="Your private 3 bedr. riad and exclusi…"
+            type="house"
+            beds="5 beds"
+            superhost="161"
           />
         </div>
 
@@ -47,9 +51,11 @@ export default () => {
           <Card
             link="/"
             image={img3}
-            title="$200 Dreamy Tropical Tree House"
-            descriptin="Entire treehouse &#183; 1 bed"
-            superhost="364 &#183; Superhost"
+            price="$200"
+            title="Dreamy Tropical Tree House"
+            type="treehouse"
+            beds="1 bed"
+            superhost="364"
           />
         </div>
 

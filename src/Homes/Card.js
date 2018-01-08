@@ -12,16 +12,21 @@ const Image = styled.img`
   margin-bottom: 0.75rem;
 `;
 
-const CardTitle = styled.h2`
+const Title = styled.h2`
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   margin-bottom: 0.1rem;
+  text-overflow: ellipsis;
 
   @media (min-width: 768px) {
     font-size: 1rem;
     line-height: 1.2rem;
   }
+`;
+
+const Price = styled.span`
+  margin-right: 0.5rem;
 `;
 
 const Description = styled.p`
@@ -45,10 +50,15 @@ export default props => (
   <Card>
     <Link to={props.link}>
       <Image src={props.image} alt="" />
-      <CardTitle>{props.title}</CardTitle>
+      <Title>
+        <Price>{props.price}</Price>
+        {props.title}
+      </Title>
     </Link>
-    <Description>{props.description}</Description>
+    <Description>
+      Entire {props.type} &#183; {props.beds}
+    </Description>
     <StarsList />
-    <Superhost>{props.superhost}</Superhost>
+    <Superhost>{props.superhost} &#183; Superhost</Superhost>
   </Card>
 );
