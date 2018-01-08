@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import logo from "./logo.svg";
 import arrow from "../../assets/arrow-down.svg";
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   display: flex;
   align-items: center;
   height: 100%;
@@ -35,7 +36,7 @@ const Arrow = styled.button`
 
 export default () => {
   return (
-    <Logo href="/">
+    <Logo to="/">
       <Img src={logo} />
       <Arrow />
     </Logo>

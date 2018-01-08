@@ -21,7 +21,7 @@ export default () => {
     <Experiences>
       <Title>
         Experiences
-        <SeeAll href="/">See all</SeeAll>
+        <SeeAll to="/">See all</SeeAll>
       </Title>
       <Slider>
         <div className="col-xs-6 col-md-4 col-lg-3">

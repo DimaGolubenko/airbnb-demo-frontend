@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import logo from "./logoGray.svg";
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   margin-right: 0.5rem;
 `;
 
@@ -14,7 +15,7 @@ const Img = styled.img`
 
 export default () => {
   return (
-    <Logo href="/" alt="">
+    <Logo to="/" alt="">
       <Img src={logo} title="" />
     </Logo>
   );

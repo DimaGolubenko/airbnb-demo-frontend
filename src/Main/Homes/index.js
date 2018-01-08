@@ -20,7 +20,7 @@ export default () => {
     <Homes>
       <Title>
         Homes
-        <SeeAll href="/">See all</SeeAll>
+        <SeeAll to="/Homes">See all</SeeAll>
       </Title>
       <Slider>
         <div className="col-xs-8 col-md-5 col-lg-4">

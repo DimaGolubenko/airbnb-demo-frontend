@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as RouterLink } from "react-router-dom";
 import arrowRight from "../assets/arrow-right.svg";
 
 export const Title = styled.h1`
@@ -34,7 +35,7 @@ export const Link = styled.a`
   display: block;
 `;
 
-export const SeeAll = styled.a`
+export const SeeAll = styled(RouterLink)`
   white-space: nowrap;
   padding-right: 1rem;
   font-size: 0.8rem;
