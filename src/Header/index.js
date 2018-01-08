@@ -4,16 +4,20 @@ import Logo from "./Logo";
 import SearchForm from "./SearchForm";
 import Nav from "./Nav";
 
+const Header = styled.header`
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  box-shadow: 0px 0.03rem 0px rgba(72, 72, 72, 0.3);
+  z-index: 5;
+`;
+
 const Wrapper = styled.div`
   padding: 1rem 0;
   display: flex;
   width: 100%;
   align-items: center;
   background: #fff;
-`;
-
-const Header = styled.header`
-  box-shadow: 0px 0.03rem 0px rgba(72, 72, 72, 0.3);
 `;
 
 export default () => {

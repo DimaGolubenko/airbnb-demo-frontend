@@ -4,9 +4,9 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./Header";
 import Main from "./Main";
 import Homes from "./Homes";
-import Footer from "./Footer";
 
 const Wrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
 `;
@@ -18,11 +18,9 @@ class App extends Component {
         <div>
           <Wrap>
             <Header />
-
             <Route path="/" exact component={Main} />
             <Route path="/homes" exact component={Homes} />
           </Wrap>
-          <Footer />
         </div>
       </BrowserRouter>
     );

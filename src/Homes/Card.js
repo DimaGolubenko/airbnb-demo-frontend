@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import StarsList from "../UI/StarsList";
 
-const Card = styled.div``;
+const Card = styled.div`
+  margin-top: 1.5rem;
+`;
 
 const Image = styled.img`
   box-sizing: border-box;
