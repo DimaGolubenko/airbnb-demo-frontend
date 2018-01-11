@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Dates from "./Dates";
+import Dates from "../Dates";
 import { Button } from "./styled";
 
 const Filters = styled.section`

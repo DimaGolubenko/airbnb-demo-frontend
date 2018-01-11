@@ -12,8 +12,6 @@ import img3 from "./homes-3.jpg";
 import img4 from "./homes-4.jpg";
 import img5 from "./homes-5.jpg";
 import img6 from "./homes-6.jpg";
-import Popup from "../UI/Popup";
-import Calendar from "../UI/Calendar";
 
 const Wrapper = styled.div``;
 
@@ -91,7 +89,7 @@ export default class Homes extends React.Component {
                   <div className="col-xs-12 col-md-6 col-lg-6">
                     <Card
                       link="/"
-                      image={img2}
+                      image={img6}
                       price="$72"
                       title="In the historical center of Lecce"
                       type="house"
