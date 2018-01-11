@@ -4,7 +4,6 @@ import arrow from "./arrow.svg";
 
 export const Weekdays = styled.div`
   padding: 0.5rem;
-  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
 `;
 
 export const Weekday = styled.span`
@@ -24,6 +23,7 @@ export const DayPicker = styled(ReactDayPicker)`
     user-select: none;
     padding-bottom: 1rem;
     flex-direction: row;
+    border-top: 1px solid rgba(72, 72, 72, 0.2);
   }
   .DayPicker-Body {
     display: table-row-group;
@@ -114,4 +114,22 @@ export const Arrow = styled.span`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+`;
+
+export const Bottom = styled.div`
+  padding: 0.5rem;
+  border-top: 1px solid rgba(72, 72, 72, 0.2);
+`;
+
+export const Save = styled.button`
+  width: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ff5a5f;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0px -1px 0px #d5d5d5;
+  cursor: pointer;
 `;

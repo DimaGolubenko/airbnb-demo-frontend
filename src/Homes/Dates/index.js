@@ -9,7 +9,9 @@ import {
   Arrow,
   Weekdays,
   Weekday,
-  DayPicker
+  DayPicker,
+  Bottom,
+  Save
 } from "./styled";
 import Popup from "../../UI/Popup";
 
@@ -110,6 +112,9 @@ export default class Dates extends React.Component {
                 modifiers={modifiers}
                 onDayClick={this.handleDayClick}
               />
+              <Bottom>
+                <Save>Save</Save>
+              </Bottom>
             </Popup>
           )}
         </Wrapper>
