@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import ReactDayPicker from "react-day-picker";
 import arrow from "./arrow.svg";

@@ -11,7 +11,7 @@ import {
   Weekday,
   DayPicker
 } from "./styled";
-import { Popup } from "../../UI/Popup";
+import Popup from "../../UI/Popup";
 
 const Wrapper = styled.span`
   position: relative;
@@ -92,7 +92,6 @@ export default class Dates extends React.Component {
                   checked={this.state.checkOut}
                   onClick={this.handleCheckClick}
                 >
-                  {" "}
                   CheckOut
                 </CheckOut>
                 <Weekdays>
@@ -116,7 +115,19 @@ export default class Dates extends React.Component {
         </Wrapper>
       );
     } else {
-      return <h1>Hello</h1>;
+      return (
+        <Wrapper>
+          <Button onClick={this.toggleOpen}>Dates</Button>
+          {this.state.isOpen && (
+            <DayPicker
+              numberOfMonths={this.props.numberOfMonths}
+              selectedDays={[from, { from, to }]}
+              modifiers={modifiers}
+              onDayClick={this.handleDayClick}
+            />
+          )}
+        </Wrapper>
+      );
     }
   }
 }
