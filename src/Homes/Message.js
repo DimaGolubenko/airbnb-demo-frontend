@@ -7,6 +7,10 @@ const Message = styled.p`
   line-height: 1.25rem;
   text-align: center;
   color: #636363;
+
+  @media (min-width: 992px) {
+    width: 66%;
+  }
 `;
 
 export default () => (

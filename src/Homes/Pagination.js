@@ -5,6 +5,10 @@ import arrow from "./arrow.svg";
 const Pagination = styled.section`
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
+
+  @media (min-width: 992px) {
+    width: 66%;
+  }
 `;
 
 const Pages = styled.div`

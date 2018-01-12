@@ -102,8 +102,10 @@ export default class Homes extends React.Component {
             </div>
           </div>
         </Cards>
-        <Pagination />
-        <Message />
+        <div className="container">
+          <Pagination />
+          <Message />
+        </div>
         <Location />
         <GoogleMap />
       </Wrapper>
