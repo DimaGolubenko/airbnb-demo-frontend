@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import GoogleMap from "./GoogleMap";
-import Filters from "./Filters";
 import Card from "./Card";
 import Pagination from "./Pagination";
 import Message from "./Message";
 import Location from "./Location";
+import Dates from "./Dates";
+import { Button, Filters } from "./styled";
 import img1 from "./homes-1.jpg";
 import img2 from "./homes-2.jpg";
 import img3 from "./homes-3.jpg";
@@ -25,7 +26,16 @@ export default class Homes extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Filters />
+        <Filters>
+          <div className="container">
+            <Dates />
+            <Button>Guests</Button>
+            <Button isHidden="true">Room type</Button>
+            <Button isHidden="true">Price</Button>
+            <Button isHidden="true">Instant book</Button>
+            <Button>More filters</Button>
+          </div>
+        </Filters>
         <Cards>
           <div className="container">
             <div className="row">

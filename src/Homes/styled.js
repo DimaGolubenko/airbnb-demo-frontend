@@ -1,6 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import close from "../../assets/close.svg";
+import close from "../assets/close.svg";
+
+export const Wrapper = styled.div``;
+
+export const Filters = styled.section`
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0.03rem 0 rgba(72, 72, 72, 0.3);
+  z-index: 2;
+`;
+
+export const Cards = styled.section`
+  position: relative;
+  margin-top: 8.5rem;
+  box-sizing: border-box;
+`;
 
 export const Button = styled.button`
   display: ${props => (props.isHidden ? "none" : "inline")};

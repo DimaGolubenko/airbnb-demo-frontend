@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { DateUtils } from "react-day-picker";
-import { Button, Close, Title, Reset } from "../Filters/styled";
+import { Button, Close, Title, Reset } from "../styled";
 import {
   Row,
   CheckIn,
