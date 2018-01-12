@@ -5,26 +5,25 @@ import StarsList from "../UI/StarsList";
 
 const Card = styled.div`
   margin-top: 1.5rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const Image = styled.img`
   box-sizing: border-box;
   display: block;
   width: 100%;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 `;
 
 const Title = styled.h2`
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 1rem;
+  margin: 0;
   margin-bottom: 0.1rem;
   text-overflow: ellipsis;
-
-  @media (min-width: 768px) {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
 `;
 
 const Price = styled.span`
@@ -32,15 +31,11 @@ const Price = styled.span`
 `;
 
 const Description = styled.p`
+  margin: 0;
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   font-size: 1rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  @media (min-width: 768px) {
-    line-height: 1.2rem;
-    margin-bottom: 0.4rem;
-  }
+  line-height: 1.2rem;
 `;
 
 const Superhost = styled.span`
