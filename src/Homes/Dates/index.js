@@ -120,7 +120,13 @@ export default class Dates extends React.Component {
     } else if (this.state.windowWidth > 768 && this.state.windowWidth < 992) {
       return (
         <Wrapper>
-          <Button onClick={this.handleIsOpen}>Dates</Button>
+          <Button opened={this.props.isOpen} onClick={this.handleIsOpen}>
+            {this.props.isOpen ? (
+              <span>Check in - Check out</span>
+            ) : (
+              <span>Dates</span>
+            )}
+          </Button>
           {this.props.isOpen && (
             <div>
               <Overlay onClick={this.handleIsOpen} />
@@ -143,7 +149,13 @@ export default class Dates extends React.Component {
     } else {
       return (
         <Wrapper>
-          <Button onClick={this.handleIsOpen}>Dates</Button>
+          <Button opened={this.props.isOpen} onClick={this.handleIsOpen}>
+            {this.props.isOpen ? (
+              <span>Check in - Check out</span>
+            ) : (
+              <span>Dates</span>
+            )}
+          </Button>
           {this.props.isOpen && (
             <div>
               <Overlay onClick={this.handleIsOpen} />

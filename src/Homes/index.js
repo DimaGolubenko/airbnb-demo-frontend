@@ -83,6 +83,8 @@ export default class Homes extends React.Component {
               handleCheck={this.handleCheck}
               isCheckIn={this.state.isCheckIn}
               isCheckOut={this.state.isCheckOut}
+              dateFrom={this.state.dateFrom}
+              dateTo={this.state.dateTo}
               handleDaysReset={this.handleDaysReset}
               handleSaveDates={this.handleSaveDates}
             />

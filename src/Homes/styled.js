@@ -27,8 +27,8 @@ export const Button = styled.button`
   padding: 0.4rem 1rem;
   margin-right: 0.75rem;
   font-size: 0.9rem;
-  color: #383838;
-  background-color: transparent;
+  color: ${props => (props.opened ? "#fff" : "#383838")};
+  background-color: ${props => (props.opened ? "#008489" : "transparent")};
   box-sizing: border-box;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 0.25rem;
