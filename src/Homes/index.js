@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GoogleMap from "./GoogleMap";
+import { Helmet } from "react-helmet";
 import Card from "./Card";
 import Pagination from "./Pagination";
 import Message from "./Message";
@@ -71,6 +72,9 @@ export default class Homes extends React.Component {
   render() {
     return (
       <Wrapper>
+        <Helmet>
+          <title>Homes</title>
+        </Helmet>
         <Filters>
           <div className="container">
             <Dates

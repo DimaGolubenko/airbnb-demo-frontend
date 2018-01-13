@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ReactDayPicker from "react-day-picker";
 import arrow from "./arrow.svg";
+import arrowDropdown from "../../assets/arrowDropdown.svg";
 
 export const Weekdays = styled.div`
   padding: 0.5rem;
@@ -24,6 +25,11 @@ export const DayPicker = styled(ReactDayPicker)`
     padding-bottom: 1rem;
     flex-direction: row;
     border-top: 1px solid rgba(72, 72, 72, 0.2);
+
+    @media (min-width: 768px) {
+      border-top: none;
+      padding-bottom: none;
+    }
   }
   .DayPicker-Body {
     display: table-row-group;
@@ -32,6 +38,10 @@ export const DayPicker = styled(ReactDayPicker)`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media (min-width: 992px) {
+      flex-wrap: nowrap;
+    }
   }
   .DayPicker-Month {
     border-collapse: collapse;
@@ -40,21 +50,97 @@ export const DayPicker = styled(ReactDayPicker)`
     margin: 0 1rem;
     margin-top: 1rem;
     text-align: center;
+
+    @media (min-white: 992px) {
+      display: inline-block;
+    }
   }
   .DayPicker-Week {
     display: table-row;
   }
+
+  .DayPicker-WeekdaysRow {
+    display: table-row;
+  }
+
   .DayPicker-Weekdays {
     display: none;
+
+    @media (min-width: 768px) {
+      margin-top: 1rem;
+      display: table-header-group;
+    }
   }
+
+  .DayPicker-Weekday {
+    display: table-cell;
+    padding: 0.5rem;
+    font-size: 0.875em;
+    text-align: center;
+    color: #636363;
+  }
+
+  .DayPicker-Weekday abbr[title] {
+    border-bottom: none;
+    text-decoration: none;
+  }
+
   .DayPicker-Caption {
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
     font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial,
       sans-serif;
     text-align: center;
   }
+
+  .DayPicker-NavBar {
+  }
+
   .DayPicker-NavButton {
+    display: none;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      cursor: pointer;
+      top: 3rem;
+      right: 1.5rem;
+      color: #8b9898;
+      width: 1.25rem;
+      height: 1.25rem;
+      display: inline-block;
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  .DayPicker-NavButton {
+    position: abbolute;
+    top: 0;
+    width: 2.5rem;
+    height: 2rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(72, 72, 72, 0.3);
+    border-radius: 2px;
+    color: #767676;
+  }
+
+  .DayPicker-NavButton--prev {
+    left: 0;
+    margin-right: 1.5rem;
+    margin-left: 1rem;
+    background-image: url(${arrowDropdown});
+    transform: rotate(-180deg);
+  }
+
+  .DayPicker-NavButton--next {
+    margin-right: 1rem;
+    right: 0;
+    background-image: url(${arrowDropdown});
+  }
+
+  .DayPicker-NavButton--interactionDisabled {
     display: none;
   }
   .DayPicker-Day {
@@ -63,11 +149,9 @@ export const DayPicker = styled(ReactDayPicker)`
     cursor: pointer;
     vertical-align: middle;
     outline: none;
-    width: 2.75rem;
-    height: 2.75rem;
     border: 1px solid #d5d5d5;
-    font-size: 0.75rem;
-    padding: 0;
+    font-size: 1rem;
+    padding: 0.8rem 0.8rem;
     box-sizing: border-box;
   }
   .DayPicker-Day--start,
@@ -117,8 +201,20 @@ export const Arrow = styled.span`
 `;
 
 export const Bottom = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 0.5rem;
+  background-color: #fff;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
+
+  @media (min-width: 768px) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+  }
 `;
 
 export const Save = styled.button`
@@ -132,4 +228,20 @@ export const Save = styled.button`
   border-radius: 0.25rem;
   box-shadow: 0px -1px 0px #d5d5d5;
   cursor: pointer;
+`;
+
+const Button = styled.button`
+  font-size: 1rem;
+  font-family: "CircularAirBook", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 1rem;
+  color: #636363;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
+export const Cancel = styled(Button)``;
+
+export const Apply = styled(Button)`
+  color: #0f7276;
 `;

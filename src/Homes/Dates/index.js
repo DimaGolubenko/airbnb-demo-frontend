@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { DateUtils } from "react-day-picker";
+import { Cancel, Apply } from "./styled";
 import { Button, Close, Title, Reset } from "../styled";
 import {
   Row,
@@ -14,16 +15,14 @@ import {
   Save
 } from "./styled";
 import Popup from "../../UI/Popup";
+import { Dropdown, Overlay } from "../../UI/Dropdown";
 
-const Wrapper = styled.span`
+const Wrapper = styled.div`
+  display: inline-block;
   position: relative;
 `;
 
 export default class Dates extends React.Component {
-  static defaultProps = {
-    numberOfMonths: 2
-  };
-
   constructor(props) {
     super(props);
     this.state = this.getInitialState();
@@ -65,6 +64,7 @@ export default class Dates extends React.Component {
 
   handleSaveDates() {
     this.props.handleSaveDates(this.state.from, this.state.to);
+    this.handleIsOpen();
   }
 
   render() {
@@ -105,7 +105,7 @@ export default class Dates extends React.Component {
                 </Weekdays>
               </Row>
               <DayPicker
-                numberOfMonths={this.props.numberOfMonths}
+                numberOfMonths={12}
                 selectedDays={[from, { from, to }]}
                 modifiers={modifiers}
                 onDayClick={this.handleDayClick}
@@ -117,17 +117,49 @@ export default class Dates extends React.Component {
           )}
         </Wrapper>
       );
+    } else if (this.state.windowWidth > 768 && this.state.windowWidth < 992) {
+      return (
+        <Wrapper>
+          <Button onClick={this.handleIsOpen}>Dates</Button>
+          {this.props.isOpen && (
+            <div>
+              <Overlay onClick={this.handleIsOpen} />
+              <Dropdown>
+                <DayPicker
+                  numberOfMonths={1}
+                  selectedDays={[from, { from, to }]}
+                  modifiers={modifiers}
+                  onDayClick={this.handleDayClick}
+                />
+                <Bottom>
+                  <Cancel onClick={this.handleResetClick}>Cancel</Cancel>
+                  <Apply onClick={this.handleSaveDates}>Apply</Apply>
+                </Bottom>
+              </Dropdown>
+            </div>
+          )}
+        </Wrapper>
+      );
     } else {
       return (
         <Wrapper>
-          <Button onClick={this.toggleOpen}>Dates</Button>
-          {this.state.isOpen && (
-            <DayPicker
-              numberOfMonths={this.props.numberOfMonths}
-              selectedDays={[from, { from, to }]}
-              modifiers={modifiers}
-              onDayClick={this.handleDayClick}
-            />
+          <Button onClick={this.handleIsOpen}>Dates</Button>
+          {this.props.isOpen && (
+            <div>
+              <Overlay onClick={this.handleIsOpen} />
+              <Dropdown>
+                <DayPicker
+                  numberOfMonths={2}
+                  selectedDays={[from, { from, to }]}
+                  modifiers={modifiers}
+                  onDayClick={this.handleDayClick}
+                />
+                <Bottom>
+                  <Cancel onClick={this.handleResetClick}>Cancel</Cancel>
+                  <Apply onClick={this.handleSaveDates}>Apply</Apply>
+                </Bottom>
+              </Dropdown>
+            </div>
           )}
         </Wrapper>
       );
