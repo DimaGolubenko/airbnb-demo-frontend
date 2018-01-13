@@ -22,37 +22,55 @@ const Wrapper = styled.div`
 `;
 
 const formatDateLabel = (dateFrom, dateTo, isOpen) => {
+  const formattedDateFrom = moment(dateFrom).format("MMM Do");
+  const formattedDateTo = moment(dateTo).format("MMM Do");
   if (dateFrom && dateTo) {
-    const formattedDateFrom = moment(dateFrom).format("MMM Do");
-    const formattedDateTo = moment(dateTo).format("MMM Do");
-    return `${formattedDateFrom} — ${formattedDateTo}`;
+    return {
+      from: formattedDateFrom,
+      to: formattedDateTo
+    };
+  } else if (dateFrom) {
+    return {
+      from: formattedDateFrom,
+      to: "Check out"
+    };
   } else if (isOpen) {
-    return "Check in — Check out";
+    return {
+      from: "Check in",
+      to: "Check out"
+    };
   } else {
-    return "Dates";
+    return {
+      from: null,
+      to: "Dates"
+    };
+  }
+};
+
+const getNumberOfMonths = () => {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    return 12;
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+    return 1;
+  } else if (window.matchMedia("(min-width: 992px)").matches) {
+    return 2;
   }
 };
 
 export default class Dates extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.getInitialState();
-  }
-
-  getInitialState() {
-    return {
+    this.state = {
       from: undefined,
       to: undefined,
-      windowWidth: window.innerWidth
+      isMobile: window.matchMedia("(max-width: 768px)").matches,
+      isCheckIn: true,
+      isCheckOut: false
     };
   }
 
   handleIsOpen = () => {
     this.props.changeIsOpen();
-  };
-
-  handleCheck = () => {
-    this.props.handleCheck();
   };
 
   handleResetClick = () => {
@@ -67,7 +85,6 @@ export default class Dates extends React.Component {
   handleDayClick = day => {
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
-    this.props.handleSaveDates(range.from, range.to);
   };
 
   handleSaveDates = () => {
@@ -75,17 +92,40 @@ export default class Dates extends React.Component {
     this.handleIsOpen();
   };
 
+  activeCheckIn = () => {
+    this.setState({
+      isCheckIn: true,
+      isCheckOut: false
+    });
+  };
+
+  activeCheckOut = () => {
+    this.setState({
+      isCheckIn: false,
+      isCheckOut: true
+    });
+  };
+
   render() {
     const from = this.state.from;
     const to = this.state.to;
     const modifiers = { start: from, end: to };
     const today = new Date();
+    const checkLabels = formatDateLabel(
+      this.state.from,
+      this.state.to,
+      this.props.isOpen
+    );
 
-    if (this.state.windowWidth < 768) {
-      return (
-        <Wrapper>
-          <Button onClick={this.handleIsOpen}>Dates</Button>
-          {this.props.isOpen && (
+    return (
+      <Wrapper>
+        <Button opened={this.props.isOpen} onClick={this.handleIsOpen}>
+          {checkLabels.from && `${checkLabels.from} - `}
+          {checkLabels.to}
+        </Button>
+
+        {this.state.isMobile &&
+          this.props.isOpen && (
             <Portal>
               <Popup>
                 <Close onClick={this.handleIsOpen} />
@@ -93,21 +133,21 @@ export default class Dates extends React.Component {
                 <Reset onClick={this.handleResetClick}>Reset</Reset>
                 <Row>
                   <CheckIn
-                    checked={this.props.isCheckIn}
-                    onClick={this.handleCheck}
+                    isChecked={this.state.isCheckIn}
+                    onClick={this.activeCheckIn}
                   >
-                    CheckIn
+                    {checkLabels.from}
                   </CheckIn>
                   <Arrow />
                   <CheckOut
-                    checked={this.props.isCheckOut}
-                    onClick={this.handleCheck}
+                    isChecked={this.state.isCheckOut}
+                    onClick={this.activeCheckOut}
                   >
-                    CheckOut
+                    {checkLabels.to}
                   </CheckOut>
                 </Row>
                 <DayPicker
-                  numberOfMonths={12}
+                  numberOfMonths={getNumberOfMonths()}
                   selectedDays={[from, { from, to }]}
                   modifiers={modifiers}
                   onDayClick={this.handleDayClick}
@@ -118,53 +158,14 @@ export default class Dates extends React.Component {
               </Popup>
             </Portal>
           )}
-        </Wrapper>
-      );
-    } else if (this.state.windowWidth > 768 && this.state.windowWidth < 992) {
-      return (
-        <Wrapper>
-          <Button opened={this.props.isOpen} onClick={this.handleIsOpen}>
-            {this.props.isOpen ? (
-              <span>Check in - Check out</span>
-            ) : (
-              <span>Dates</span>
-            )}
-          </Button>
-          {this.props.isOpen && (
+
+        {!this.state.isMobile &&
+          this.props.isOpen && (
             <div>
               <Overlay onClick={this.handleIsOpen} />
               <Dropdown>
                 <DayPicker
-                  numberOfMonths={1}
-                  selectedDays={[from, { from, to }]}
-                  modifiers={modifiers}
-                  onDayClick={this.handleDayClick}
-                />
-                <Bottom>
-                  <Cancel onClick={this.handleResetClick}>Cancel</Cancel>
-                  <Apply onClick={this.handleSaveDates}>Apply</Apply>
-                </Bottom>
-              </Dropdown>
-            </div>
-          )}
-        </Wrapper>
-      );
-    } else {
-      return (
-        <Wrapper>
-          <Button opened={this.props.isOpen} onClick={this.handleIsOpen}>
-            {formatDateLabel(
-              this.props.dateFrom,
-              this.props.dateTo,
-              this.props.isOpen
-            )}
-          </Button>
-          {this.props.isOpen && (
-            <div>
-              <Overlay onClick={this.handleIsOpen} />
-              <Dropdown>
-                <DayPicker
-                  numberOfMonths={2}
+                  numberOfMonths={getNumberOfMonths()}
                   selectedDays={[from, { from, to }]}
                   modifiers={modifiers}
                   onDayClick={this.handleDayClick}
@@ -177,8 +178,7 @@ export default class Dates extends React.Component {
               </Dropdown>
             </div>
           )}
-        </Wrapper>
-      );
-    }
+      </Wrapper>
+    );
   }
 }

@@ -26,16 +26,10 @@ const Cards = styled.section`
 export default class Homes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.setInitialState();
-  }
-
-  setInitialState() {
-    return {
+    this.state = {
       isOpen: false,
       dateFrom: undefined,
-      dateTo: undefined,
-      isCheckIn: true,
-      isCheckOut: false
+      dateTo: undefined
     };
   }
 
@@ -47,13 +41,6 @@ export default class Homes extends React.Component {
     this.setState({
       dateFrom: undefined,
       dateTo: undefined
-    });
-  };
-
-  handleCheck = () => {
-    this.setState({
-      isCheckIn: !this.state.isCheckIn,
-      isCheckOut: !this.state.isCheckOut
     });
   };
 
@@ -75,9 +62,6 @@ export default class Homes extends React.Component {
             <Dates
               changeIsOpen={this.handleIsOpen}
               isOpen={this.state.isOpen}
-              handleCheck={this.handleCheck}
-              isCheckIn={this.state.isCheckIn}
-              isCheckOut={this.state.isCheckOut}
               dateFrom={this.state.dateFrom}
               dateTo={this.state.dateTo}
               handleDaysReset={this.handleDaysReset}
