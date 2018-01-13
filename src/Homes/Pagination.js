@@ -7,7 +7,7 @@ const Pagination = styled.section`
   margin-bottom: 1.5rem;
 
   @media (min-width: 992px) {
-    width: 66%;
+    margin-right: 34%;
   }
 `;
 

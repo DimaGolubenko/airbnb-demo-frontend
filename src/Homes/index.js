@@ -4,7 +4,7 @@ import GoogleMap from "./GoogleMap";
 import { Helmet } from "react-helmet";
 import Card from "./Card";
 import Pagination from "./Pagination";
-import Message from "./Message";
+import Info from "./Info";
 import Location from "./Location";
 import Dates from "./Dates";
 import { Button, Filters } from "./styled";
@@ -91,8 +91,9 @@ export default class Homes extends React.Component {
             <Button>More filters</Button>
           </div>
         </Filters>
-        <Cards>
-          <div className="container">
+
+        <div className="container">
+          <Cards>
             <div className="row">
               <div className="col-xs-12 col-lg-8">
                 <div className="row">
@@ -165,13 +166,11 @@ export default class Homes extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-        </Cards>
-        <div className="container">
+          </Cards>
           <Pagination />
-          <Message />
+          <Info />
+          <Location />
         </div>
-        <Location />
         <GoogleMap />
       </Wrapper>
     );

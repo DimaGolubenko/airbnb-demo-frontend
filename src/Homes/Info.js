@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Message = styled.p`
+const Info = styled.p`
   margin-bottom: 5.5rem;
   font-size: 1rem;
   line-height: 1.25rem;
@@ -9,12 +9,12 @@ const Message = styled.p`
   color: #636363;
 
   @media (min-width: 992px) {
-    width: 66%;
+    margin-right: 34%;
   }
 `;
 
 export default () => (
-  <Message>
+  <Info>
     Enter dates to see full pricing. Additional fees apply. Taxes may be added.
-  </Message>
+  </Info>
 );
