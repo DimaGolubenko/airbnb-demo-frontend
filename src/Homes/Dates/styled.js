@@ -5,6 +5,7 @@ import arrowDropdown from "../../assets/arrowDropdown.svg";
 
 export const Weekdays = styled.div`
   padding: 0.5rem;
+  text-align: center;
 `;
 
 export const Weekday = styled.span`
