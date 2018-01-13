@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Portal } from "react-portal";
+import moment from "moment";
 import { DateUtils } from "react-day-picker";
 import { Cancel, Apply } from "./styled";
 import { Button, Close, Title, Reset, Popup } from "../styled";
@@ -9,8 +10,6 @@ import {
   CheckIn,
   CheckOut,
   Arrow,
-  Weekdays,
-  Weekday,
   DayPicker,
   Bottom,
   Save
@@ -21,6 +20,18 @@ const Wrapper = styled.div`
   display: inline-block;
   position: relative;
 `;
+
+const formatDateLabel = (dateFrom, dateTo, isOpen) => {
+  if (dateFrom && dateTo) {
+    const formattedDateFrom = moment(dateFrom).format("MMM Do");
+    const formattedDateTo = moment(dateTo).format("MMM Do");
+    return `${formattedDateFrom} — ${formattedDateTo}`;
+  } else if (isOpen) {
+    return "Check in — Check out";
+  } else {
+    return "Dates";
+  }
+};
 
 export default class Dates extends React.Component {
   constructor(props) {
@@ -47,7 +58,8 @@ export default class Dates extends React.Component {
   handleResetClick = () => {
     this.setState({
       from: undefined,
-      to: undefined
+      to: undefined,
+      isDisabled: false
     });
     this.props.handleDaysReset();
   };
@@ -55,6 +67,7 @@ export default class Dates extends React.Component {
   handleDayClick = day => {
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
+    this.props.handleSaveDates(range.from, range.to);
   };
 
   handleSaveDates = () => {
@@ -63,8 +76,10 @@ export default class Dates extends React.Component {
   };
 
   render() {
-    const { from, to } = this.state;
+    const from = this.state.from;
+    const to = this.state.to;
     const modifiers = { start: from, end: to };
+    const today = new Date();
 
     if (this.state.windowWidth < 768) {
       return (
@@ -138,10 +153,10 @@ export default class Dates extends React.Component {
       return (
         <Wrapper>
           <Button opened={this.props.isOpen} onClick={this.handleIsOpen}>
-            {this.props.isOpen ? (
-              <span>Check in - Check out</span>
-            ) : (
-              <span>Dates</span>
+            {formatDateLabel(
+              this.props.dateFrom,
+              this.props.dateTo,
+              this.props.isOpen
             )}
           </Button>
           {this.props.isOpen && (
@@ -153,7 +168,7 @@ export default class Dates extends React.Component {
                   selectedDays={[from, { from, to }]}
                   modifiers={modifiers}
                   onDayClick={this.handleDayClick}
-                  disabledDays={{ before: new Date() }}
+                  disabledDays={{ before: today }}
                 />
                 <Bottom>
                   <Cancel onClick={this.handleResetClick}>Cancel</Cancel>
