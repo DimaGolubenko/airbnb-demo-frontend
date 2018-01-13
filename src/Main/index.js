@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 import Explore from "./Explore";
 import Experiences from "./Experiences";
 import Homes from "./Homes";
@@ -15,6 +16,9 @@ export default () => {
   return (
     <div>
       <Main>
+        <Helmet>
+          <title>Main</title>
+        </Helmet>
         <div className="container">
           <Explore />
           <Experiences />
