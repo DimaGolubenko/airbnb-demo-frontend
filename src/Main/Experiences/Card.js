@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import StarsList from "../../UI/StarsList";
+import Stars from "../../UI/Stars";
 import { Image } from "../styled";
 
 const Card = styled.div``;
@@ -39,7 +39,7 @@ export default props => (
       <CardTitle>{props.title}</CardTitle>
     </Link>
     <div>
-      <StarsList />
+      <Stars />
       <Reviews>{props.reviews}</Reviews>
     </div>
   </Card>

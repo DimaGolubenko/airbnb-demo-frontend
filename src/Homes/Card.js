@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import StarsList from "../UI/StarsList";
+import Stars from "../UI/Stars";
 
 const Card = styled.div`
   margin-top: 1.5rem;
@@ -18,7 +18,7 @@ const Image = styled.img`
   margin-bottom: 0.5rem;
 `;
 
-const Title = styled.h2`
+const Title = styled.p`
   font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   margin: 0;
@@ -55,7 +55,7 @@ export default props => (
     <Description>
       Entire {props.type} &#183; {props.beds}
     </Description>
-    <StarsList />
+    <Stars />
     <Superhost>{props.superhost} &#183; Superhost</Superhost>
   </Card>
 );
