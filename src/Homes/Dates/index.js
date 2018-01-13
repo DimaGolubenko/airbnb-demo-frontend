@@ -50,7 +50,7 @@ const formatDateLabel = (dateFrom, dateTo, isOpen) => {
 const getNumberOfMonths = () => {
   if (window.matchMedia("(max-width: 768px)").matches) {
     return 12;
-  } else if (window.matchMedia("(min-width: 768px)").matches) {
+  } else if (window.matchMedia("(max-width: 992px)").matches) {
     return 1;
   } else if (window.matchMedia("(min-width: 992px)").matches) {
     return 2;
