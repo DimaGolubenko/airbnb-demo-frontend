@@ -70,3 +70,16 @@ export const Title = styled.h3`
   margin-bottom: 2.5rem;
   text-align: center;
 `;
+
+export const Popup = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 0.0625rem solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0 0.125rem 0.25rem rgba(72, 72, 72, 0.08);
+  border-radius: 0.25rem;
+  z-index: 3;
+`;

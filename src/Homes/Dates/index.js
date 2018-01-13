@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Portal } from "react-portal";
 import { DateUtils } from "react-day-picker";
 import { Cancel, Apply } from "./styled";
-import { Button, Close, Title, Reset } from "../styled";
+import { Button, Close, Title, Reset, Popup } from "../styled";
 import {
   Row,
   CheckIn,
@@ -14,7 +15,6 @@ import {
   Bottom,
   Save
 } from "./styled";
-import Popup from "../../UI/Popup";
 import { Dropdown, Overlay } from "../../UI/Dropdown";
 
 const Wrapper = styled.div`
@@ -71,44 +71,46 @@ export default class Dates extends React.Component {
         <Wrapper>
           <Button onClick={this.handleIsOpen}>Dates</Button>
           {this.props.isOpen && (
-            <Popup>
-              <Close onClick={this.handleIsOpen} />
-              <Title>Dates</Title>
-              <Reset onClick={this.handleResetClick}>Reset</Reset>
-              <Row>
-                <CheckIn
-                  checked={this.props.isCheckIn}
-                  onClick={this.handleCheck}
-                >
-                  CheckIn
-                </CheckIn>
-                <Arrow />
-                <CheckOut
-                  checked={this.props.isCheckOut}
-                  onClick={this.handleCheck}
-                >
-                  CheckOut
-                </CheckOut>
-                <Weekdays>
-                  <Weekday>Su</Weekday>
-                  <Weekday>Mo</Weekday>
-                  <Weekday>Tu</Weekday>
-                  <Weekday>We</Weekday>
-                  <Weekday>Th</Weekday>
-                  <Weekday>Fr</Weekday>
-                  <Weekday>Sa</Weekday>
-                </Weekdays>
-              </Row>
-              <DayPicker
-                numberOfMonths={12}
-                selectedDays={[from, { from, to }]}
-                modifiers={modifiers}
-                onDayClick={this.handleDayClick}
-              />
-              <Bottom>
-                <Save onClick={this.handleSaveDates}>Save</Save>
-              </Bottom>
-            </Popup>
+            <Portal>
+              <Popup>
+                <Close onClick={this.handleIsOpen} />
+                <Title>Dates</Title>
+                <Reset onClick={this.handleResetClick}>Reset</Reset>
+                <Row>
+                  <CheckIn
+                    checked={this.props.isCheckIn}
+                    onClick={this.handleCheck}
+                  >
+                    CheckIn
+                  </CheckIn>
+                  <Arrow />
+                  <CheckOut
+                    checked={this.props.isCheckOut}
+                    onClick={this.handleCheck}
+                  >
+                    CheckOut
+                  </CheckOut>
+                  <Weekdays>
+                    <Weekday>Su</Weekday>
+                    <Weekday>Mo</Weekday>
+                    <Weekday>Tu</Weekday>
+                    <Weekday>We</Weekday>
+                    <Weekday>Th</Weekday>
+                    <Weekday>Fr</Weekday>
+                    <Weekday>Sa</Weekday>
+                  </Weekdays>
+                </Row>
+                <DayPicker
+                  numberOfMonths={12}
+                  selectedDays={[from, { from, to }]}
+                  modifiers={modifiers}
+                  onDayClick={this.handleDayClick}
+                />
+                <Bottom>
+                  <Save onClick={this.handleSaveDates}>Save</Save>
+                </Bottom>
+              </Popup>
+            </Portal>
           )}
         </Wrapper>
       );
