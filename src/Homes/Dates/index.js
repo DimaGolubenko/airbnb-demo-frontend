@@ -26,11 +26,6 @@ export default class Dates extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.getInitialState();
-    this.handleResetClick = this.handleResetClick.bind(this);
-    this.handleIsOpen = this.handleIsOpen.bind(this);
-    this.handleDayClick = this.handleDayClick.bind(this);
-    this.handleCheck = this.handleCheck.bind(this);
-    this.handleSaveDates = this.handleSaveDates.bind(this);
   }
 
   getInitialState() {
@@ -41,31 +36,31 @@ export default class Dates extends React.Component {
     };
   }
 
-  handleIsOpen() {
+  handleIsOpen = () => {
     this.props.changeIsOpen();
-  }
+  };
 
-  handleCheck() {
+  handleCheck = () => {
     this.props.handleCheck();
-  }
+  };
 
-  handleResetClick() {
+  handleResetClick = () => {
     this.setState({
       from: undefined,
       to: undefined
     });
     this.props.handleDaysReset();
-  }
+  };
 
-  handleDayClick(day) {
+  handleDayClick = day => {
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
-  }
+  };
 
-  handleSaveDates() {
+  handleSaveDates = () => {
     this.props.handleSaveDates(this.state.from, this.state.to);
     this.handleIsOpen();
-  }
+  };
 
   render() {
     const { from, to } = this.state;

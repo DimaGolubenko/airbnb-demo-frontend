@@ -27,10 +27,6 @@ export default class Homes extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.setInitialState();
-    this.handleIsOpen = this.handleIsOpen.bind(this);
-    this.handleCheck = this.handleCheck.bind(this);
-    this.handleDaysReset = this.handleDaysReset.bind(this);
-    this.handleSaveDates = this.handleSaveDates.bind(this);
   }
 
   setInitialState() {
@@ -43,31 +39,31 @@ export default class Homes extends React.Component {
     };
   }
 
-  handleIsOpen() {
+  handleIsOpen = () => {
     this.setState({ isOpen: !this.state.isOpen });
     console.log(this.state.isOpen);
-  }
+  };
 
-  handleDaysReset() {
+  handleDaysReset = () => {
     this.setState({
       dateFrom: undefined,
       dateTo: undefined
     });
-  }
+  };
 
-  handleCheck() {
+  handleCheck = () => {
     this.setState({
       isCheckIn: !this.state.isCheckIn,
       isCheckOut: !this.state.isCheckOut
     });
-  }
+  };
 
-  handleSaveDates(dateFrom, dateTo) {
+  handleSaveDates = (dateFrom, dateTo) => {
     this.setState({
       dateFrom: dateFrom,
       dateTo: dateTo
     });
-  }
+  };
 
   render() {
     return (
