@@ -90,15 +90,6 @@ export default class Dates extends React.Component {
                   >
                     CheckOut
                   </CheckOut>
-                  <Weekdays>
-                    <Weekday>Su</Weekday>
-                    <Weekday>Mo</Weekday>
-                    <Weekday>Tu</Weekday>
-                    <Weekday>We</Weekday>
-                    <Weekday>Th</Weekday>
-                    <Weekday>Fr</Weekday>
-                    <Weekday>Sa</Weekday>
-                  </Weekdays>
                 </Row>
                 <DayPicker
                   numberOfMonths={12}

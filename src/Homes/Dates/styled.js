@@ -3,18 +3,6 @@ import ReactDayPicker from "react-day-picker";
 import arrow from "./arrow.svg";
 import arrowDropdown from "../../assets/arrowDropdown.svg";
 
-export const Weekdays = styled.div`
-  padding: 0.5rem;
-  text-align: center;
-`;
-
-export const Weekday = styled.span`
-  display: inline-block;
-  text-align: center;
-  font-size: 0.75rem;
-  width: 2.8rem;
-`;
-
 export const DayPicker = styled(ReactDayPicker)`
   .DayPicker {
     display: flex;
@@ -62,9 +50,11 @@ export const DayPicker = styled(ReactDayPicker)`
 
   .DayPicker-WeekdaysRow {
     display: table-row;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
   }
 
-  .DayPicker-Weekdays {
+  .DayPicker-Months .DayPicker-Weekdays {
     display: none;
 
     @media (min-width: 768px) {
@@ -73,10 +63,23 @@ export const DayPicker = styled(ReactDayPicker)`
     }
   }
 
+  .DayPicker-Month:first-child .DayPicker-Weekdays {
+    position: absolute;
+    top: -1.2rem;
+    left: center;
+    display: table-header-group;
+    paddin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      position: inherit;
+    }
+  }
+
   .DayPicker-Weekday {
     display: table-cell;
-    padding: 0.5rem;
-    font-size: 0.875em;
+    padding: 0 0.8rem;
+    padding-bottom: 0.2rem;
+    font-size: 0.75em;
     text-align: center;
     color: #636363;
   }
@@ -94,9 +97,6 @@ export const DayPicker = styled(ReactDayPicker)`
     font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial,
       sans-serif;
     text-align: center;
-  }
-
-  .DayPicker-NavBar {
   }
 
   .DayPicker-NavButton {
@@ -179,6 +179,11 @@ export const DayPicker = styled(ReactDayPicker)`
 
 export const Row = styled.div`
   padding: 0 0.5rem;
+  margin-bottom: 2rem;
+
+  @media (min-wudth: 768px) {
+    margin: 0;
+  }
 `;
 
 export const Check = styled.span`
@@ -239,7 +244,7 @@ export const Save = styled.button`
 const Button = styled.button`
   font-size: 1rem;
   font-family: "CircularAirBook", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   color: #636363;
   background-color: transparent;
   border: none;
