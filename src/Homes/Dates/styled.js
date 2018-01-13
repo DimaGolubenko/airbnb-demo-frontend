@@ -124,6 +124,7 @@ export const DayPicker = styled(ReactDayPicker)`
     margin-top: 1rem;
     border: 1px solid rgba(72, 72, 72, 0.3);
     border-radius: 2px;
+    box-sizing: border-box;
     color: #767676;
   }
 
@@ -151,8 +152,9 @@ export const DayPicker = styled(ReactDayPicker)`
     vertical-align: middle;
     outline: none;
     border: 1px solid #d5d5d5;
-    font-size: 1rem;
-    padding: 0.8rem 0.8rem;
+    font-size: 0.9rem;
+    color: #383838;
+    padding: 0.7rem 0.7rem;
     box-sizing: border-box;
   }
   .DayPicker-Day--start,
@@ -161,6 +163,9 @@ export const DayPicker = styled(ReactDayPicker)`
   }
   .DayPicker-Day--outside {
     border: none;
+  }
+  .DayPicker-Day--disabled {
+    color: #cbcbcb;
   }
   .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):not(.DayPicker-Day--start):not(.DayPicker-Day--end) {
     background-color: rgba(0, 132, 137, 0.1);

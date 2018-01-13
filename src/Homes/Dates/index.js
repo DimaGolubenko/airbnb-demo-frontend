@@ -165,6 +165,7 @@ export default class Dates extends React.Component {
                   selectedDays={[from, { from, to }]}
                   modifiers={modifiers}
                   onDayClick={this.handleDayClick}
+                  disabledDays={{ before: new Date() }}
                 />
                 <Bottom>
                   <Cancel onClick={this.handleResetClick}>Cancel</Cancel>
