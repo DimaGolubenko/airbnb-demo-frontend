@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "../styled";
+import { Title as HomesTitle } from "../styled";
 import { Slider, SeeAll, SliderArrow } from "../styled";
 import Card from "../../Homes/Card";
 import img1 from "./homes-1.png";
@@ -13,6 +13,10 @@ const Homes = styled.section`
 
 const Arrow = SliderArrow.extend`
   top: 8.7rem;
+`;
+
+const Title = styled(HomesTitle)`
+  margin-bottom: 0;
 `;
 
 export default () => {
