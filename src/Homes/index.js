@@ -23,12 +23,65 @@ const Cards = styled.section`
 `;
 
 export default class Homes extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.setInitialState();
+    this.handleIsOpen = this.handleIsOpen.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+    this.handleDaysReset = this.handleDaysReset.bind(this);
+    this.handleSaveDates = this.handleSaveDates.bind(this);
+  }
+
+  setInitialState() {
+    return {
+      isOpen: false,
+      dateFrom: undefined,
+      dateTo: undefined,
+      isCheckIn: true,
+      isCheckOut: false
+    };
+  }
+
+  handleIsOpen() {
+    this.setState({ isOpen: !this.state.isOpen });
+    console.log(this.state.isOpen);
+  }
+
+  handleDaysReset() {
+    this.setState({
+      dateFrom: undefined,
+      dateTo: undefined
+    });
+  }
+
+  handleCheck() {
+    this.setState({
+      isCheckIn: !this.state.isCheckIn,
+      isCheckOut: !this.state.isCheckOut
+    });
+  }
+
+  handleSaveDates(dateFrom, dateTo) {
+    this.setState({
+      dateFrom: dateFrom,
+      dateTo: dateTo
+    });
+  }
+
   render() {
     return (
       <Wrapper>
         <Filters>
           <div className="container">
-            <Dates />
+            <Dates
+              changeIsOpen={this.handleIsOpen}
+              isOpen={this.state.isOpen}
+              handleCheck={this.handleCheck}
+              isCheckIn={this.state.isCheckIn}
+              isCheckOut={this.state.isCheckOut}
+              handleDaysReset={this.handleDaysReset}
+              handleSaveDates={this.handleSaveDates}
+            />
             <Button>Guests</Button>
             <Button isHidden="true">Room type</Button>
             <Button isHidden="true">Price</Button>

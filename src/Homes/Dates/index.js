@@ -27,33 +27,27 @@ export default class Dates extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.getInitialState();
-    this.handleCheckClick = this.handleCheckClick.bind(this);
-    this.handleDayClick = this.handleDayClick.bind(this);
     this.handleResetClick = this.handleResetClick.bind(this);
-    this.toggleOpen = this.toggleOpen.bind(this);
+    this.handleIsOpen = this.handleIsOpen.bind(this);
+    this.handleDayClick = this.handleDayClick.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+    this.handleSaveDates = this.handleSaveDates.bind(this);
   }
 
   getInitialState() {
     return {
       from: undefined,
       to: undefined,
-      windowWidth: window.innerWidth,
-      isOpen: false,
-      checkIn: true,
-      checkOut: false
+      windowWidth: window.innerWidth
     };
   }
 
-  handleCheckClick() {
-    this.setState({
-      checkIn: !this.state.checkIn,
-      checkOut: !this.state.checkOut
-    });
+  handleIsOpen() {
+    this.props.changeIsOpen();
   }
 
-  handleDayClick(day) {
-    const range = DateUtils.addDayToRange(day, this.state);
-    this.setState(range);
+  handleCheck() {
+    this.props.handleCheck();
   }
 
   handleResetClick() {
@@ -61,12 +55,16 @@ export default class Dates extends React.Component {
       from: undefined,
       to: undefined
     });
+    this.props.handleDaysReset();
   }
 
-  toggleOpen() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  handleDayClick(day) {
+    const range = DateUtils.addDayToRange(day, this.state);
+    this.setState(range);
+  }
+
+  handleSaveDates() {
+    this.props.handleSaveDates(this.state.from, this.state.to);
   }
 
   render() {
@@ -76,23 +74,23 @@ export default class Dates extends React.Component {
     if (this.state.windowWidth < 768) {
       return (
         <Wrapper>
-          <Button onClick={this.toggleOpen}>Dates</Button>
-          {this.state.isOpen && (
+          <Button onClick={this.handleIsOpen}>Dates</Button>
+          {this.props.isOpen && (
             <Popup>
-              <Close onClick={this.toggleOpen} />
+              <Close onClick={this.handleIsOpen} />
               <Title>Dates</Title>
               <Reset onClick={this.handleResetClick}>Reset</Reset>
               <Row>
                 <CheckIn
-                  checked={this.state.checkIn}
-                  onClick={this.handleCheckClick}
+                  checked={this.props.isCheckIn}
+                  onClick={this.handleCheck}
                 >
                   CheckIn
                 </CheckIn>
                 <Arrow />
                 <CheckOut
-                  checked={this.state.checkOut}
-                  onClick={this.handleCheckClick}
+                  checked={this.props.isCheckOut}
+                  onClick={this.handleCheck}
                 >
                   CheckOut
                 </CheckOut>
@@ -113,7 +111,7 @@ export default class Dates extends React.Component {
                 onDayClick={this.handleDayClick}
               />
               <Bottom>
-                <Save>Save</Save>
+                <Save onClick={this.handleSaveDates}>Save</Save>
               </Bottom>
             </Popup>
           )}
