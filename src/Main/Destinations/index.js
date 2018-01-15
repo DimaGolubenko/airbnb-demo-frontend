@@ -39,11 +39,11 @@ export default () => {
         </div>
 
         <div className="col-xs-4 col-md-3 col-lg-2">
-          <Card link="/" image={img4} city="Seoul" />
+          <Card link="/" image={img5} city="Seoul" />
         </div>
 
         <div className="col-xs-4 col-md-3 col-lg-2">
-          <Card link="/" image={img4} city="Los Angeles" />
+          <Card link="/" image={img6} city="Los Angeles" />
         </div>
 
         <Arrow />
