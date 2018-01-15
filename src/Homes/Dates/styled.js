@@ -11,7 +11,7 @@ export const DayPicker = styled(ReactDayPicker)`
   .DayPicker-wrapper {
     position: relative;
     user-select: none;
-    padding-bottom: 1rem;
+    margin: 1rem 0.5rem 0 0.5rem;
     flex-direction: row;
     border-top: 1px solid rgba(72, 72, 72, 0.2);
 
@@ -177,12 +177,18 @@ export const DayPicker = styled(ReactDayPicker)`
   }
 `;
 
+export const Wrapper = styled.div`
+  display: inline-block;
+  position: relative;
+`;
+
 export const Row = styled.div`
   padding: 0 0.5rem;
   margin-bottom: 2rem;
 
-  @media (min-wudth: 768px) {
+  @media (min-width: 768px) {
     margin: 0;
+    display: none;
   }
 `;
 
@@ -209,50 +215,4 @@ export const Arrow = styled.span`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-`;
-
-export const Bottom = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.5rem;
-  background-color: #fff;
-  border-top: 1px solid rgba(72, 72, 72, 0.2);
-
-  @media (min-width: 768px) {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    border: none;
-  }
-`;
-
-export const Save = styled.button`
-  width: 100%;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #ff5a5f;
-  border: none;
-  border-radius: 0.25rem;
-  box-shadow: 0px -1px 0px #d5d5d5;
-  cursor: pointer;
-`;
-
-const Button = styled.button`
-  font-size: 1rem;
-  font-family: "CircularAirBook", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: 0.5rem;
-  color: #636363;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-`;
-
-export const Cancel = styled(Button)``;
-
-export const Apply = styled(Button)`
-  color: #0f7276;
 `;

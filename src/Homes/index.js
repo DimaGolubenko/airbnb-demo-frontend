@@ -7,13 +7,18 @@ import Pagination from "./Pagination";
 import Info from "./Info";
 import Location from "./Location";
 import Dates from "./Dates";
-import { Button, Filters } from "./styled";
+import Guests from "./Guests";
+import { Filter, Filters } from "./styled";
 import img1 from "./homes-1.jpg";
 import img2 from "./homes-2.jpg";
 import img3 from "./homes-3.jpg";
 import img4 from "./homes-4.jpg";
 import img5 from "./homes-5.jpg";
 import img6 from "./homes-6.jpg";
+
+export const ADULT = "adult";
+export const CHILDREN = "children";
+export const INFANTS = "infants";
 
 const Wrapper = styled.div``;
 
@@ -24,17 +29,36 @@ const Cards = styled.section`
 `;
 
 export default class Homes extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      dateFrom: undefined,
-      dateTo: undefined
-    };
-  }
+  state = {
+    isOpen: {
+      dates: false,
+      guests: false
+    },
+    guests: {
+      [ADULT]: 0,
+      [CHILDREN]: 0,
+      [INFANTS]: 0
+    },
+    dateFrom: undefined,
+    dateTo: undefined
+  };
 
-  handleIsOpen = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+  closeAllFilters = () => {
+    this.setState({
+      isOpen: {
+        dates: false,
+        guests: false
+      }
+    });
+  };
+
+  handleIsOpen = filter => {
+    this.closeAllFilters();
+    this.setState({
+      isOpen: {
+        [filter]: !this.state.isOpen[filter]
+      }
+    });
   };
 
   handleDaysReset = () => {
@@ -51,6 +75,27 @@ export default class Homes extends React.Component {
     });
   };
 
+  decrementGuests = (type, count) => {
+    this.setState({ guests: { ...this.state.guests, [type]: [count] } });
+  };
+
+  incrementGuests = (type, count) => {
+    this.setState({
+      ...this.state,
+      guests: { ...this.state.guests, [type]: [count] }
+    });
+  };
+
+  handleGuestsClear = () => {
+    this.setState({
+      guests: {
+        [ADULT]: 0,
+        [CHILDREN]: 0,
+        [INFANTS]: 0
+      }
+    });
+  };
+
   render() {
     return (
       <Wrapper>
@@ -61,17 +106,25 @@ export default class Homes extends React.Component {
           <div className="container">
             <Dates
               changeIsOpen={this.handleIsOpen}
-              isOpen={this.state.isOpen}
+              isOpen={this.state.isOpen.dates}
               dateFrom={this.state.dateFrom}
               dateTo={this.state.dateTo}
               handleDaysReset={this.handleDaysReset}
               handleSaveDates={this.handleSaveDates}
             />
-            <Button>Guests</Button>
-            <Button isHidden="true">Room type</Button>
-            <Button isHidden="true">Price</Button>
-            <Button isHidden="true">Instant book</Button>
-            <Button>More filters</Button>
+
+            <Guests
+              changeIsOpen={this.handleIsOpen}
+              isOpen={this.state.isOpen.guests}
+              decrementGuests={this.decrementGuests}
+              incrementGuests={this.incrementGuests}
+              guests={this.state.guests}
+              handleGuestsClear={this.handleGuestsClear}
+            />
+            <Filter isHidden="true">Room type</Filter>
+            <Filter isHidden="true">Price</Filter>
+            <Filter isHidden="true">Instant book</Filter>
+            <Filter>More filters</Filter>
           </div>
         </Filters>
 
