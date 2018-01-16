@@ -7,7 +7,6 @@ import Pagination from "./Pagination";
 import Info from "./Info";
 import Location from "./Location";
 import Dates from "./Dates";
-import Guests from "./Guests";
 import { Filter, Filters } from "./styled";
 import img1 from "./homes-1.jpg";
 import img2 from "./homes-2.jpg";
@@ -31,13 +30,7 @@ const Cards = styled.section`
 export default class Homes extends React.Component {
   state = {
     isOpen: {
-      dates: false,
-      guests: false
-    },
-    guests: {
-      [ADULT]: 0,
-      [CHILDREN]: 0,
-      [INFANTS]: 0
+      dates: false
     },
     dateFrom: undefined,
     dateTo: undefined
@@ -75,27 +68,6 @@ export default class Homes extends React.Component {
     });
   };
 
-  decrementGuests = (type, count) => {
-    this.setState({ guests: { ...this.state.guests, [type]: [count] } });
-  };
-
-  incrementGuests = (type, count) => {
-    this.setState({
-      ...this.state,
-      guests: { ...this.state.guests, [type]: [count] }
-    });
-  };
-
-  handleGuestsClear = () => {
-    this.setState({
-      guests: {
-        [ADULT]: 0,
-        [CHILDREN]: 0,
-        [INFANTS]: 0
-      }
-    });
-  };
-
   render() {
     return (
       <Wrapper>
@@ -113,14 +85,7 @@ export default class Homes extends React.Component {
               handleSaveDates={this.handleSaveDates}
             />
 
-            <Guests
-              changeIsOpen={this.handleIsOpen}
-              isOpen={this.state.isOpen.guests}
-              decrementGuests={this.decrementGuests}
-              incrementGuests={this.incrementGuests}
-              guests={this.state.guests}
-              handleGuestsClear={this.handleGuestsClear}
-            />
+            <Filter isHidden="true">Guests</Filter>
             <Filter isHidden="true">Room type</Filter>
             <Filter isHidden="true">Price</Filter>
             <Filter isHidden="true">Instant book</Filter>

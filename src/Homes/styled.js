@@ -118,6 +118,7 @@ export const Bottom = styled.div`
 
 export const Save = styled.button`
   width: 100%;
+  display: block;
   margin: 0.5rem;
   box-sizing: border-box;
   padding-top: 0.75rem;
