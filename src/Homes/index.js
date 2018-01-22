@@ -85,10 +85,10 @@ export default class Homes extends React.Component {
               handleSaveDates={this.handleSaveDates}
             />
 
-            <Filter isHidden="true">Guests</Filter>
-            <Filter isHidden="true">Room type</Filter>
-            <Filter isHidden="true">Price</Filter>
-            <Filter isHidden="true">Instant book</Filter>
+            <Filter isHidden={true}>Guests</Filter>
+            <Filter isHidden={true}>Room type</Filter>
+            <Filter isHidden={true}>Price</Filter>
+            <Filter isHidden={true}>Instant book</Filter>
             <Filter>More filters</Filter>
           </div>
         </Filters>
