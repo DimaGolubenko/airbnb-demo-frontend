@@ -197,8 +197,8 @@ export const Check = styled.span`
   line-height: 1.5rem;
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
-  color: ${props => (props.checked ? "#0f7276" : "inherit")};
-  border-bottom: ${props => (props.checked ? "2px solid #0f7276" : "none")};
+  color: ${props => (props.isChecked ? "#0f7276" : "inherit")};
+  border-bottom: ${props => (props.isChecked ? "2px solid #0f7276" : "none")};
 `;
 
 export const CheckIn = styled(Check)``;

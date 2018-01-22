@@ -8,18 +8,18 @@ export const formatDateLabel = (dateFrom, dateTo, isOpen) => {
       from: formattedDateFrom,
       to: formattedDateTo
     };
-  } else if (dateFrom) {
+  }
+  if (dateFrom) {
     return {
       from: formattedDateFrom,
       to: "Check out"
     };
-  } else if (isOpen) {
+  }
+  if (isOpen) {
     return {
       from: "Check in",
       to: "Check out"
     };
-  } else {
-    return "Dates";
   }
 };
 

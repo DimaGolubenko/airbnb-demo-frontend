@@ -17,9 +17,6 @@ import { Row, CheckIn, CheckOut, Arrow, DayPicker } from "./styled";
 
 export default class Dates extends React.Component {
   state = {
-    from: undefined,
-    to: undefined,
-    isMobile: window.matchMedia("(max-width: 768px)").matches,
     isCheckIn: true,
     isCheckOut: false
   };
@@ -29,11 +26,6 @@ export default class Dates extends React.Component {
   };
 
   handleResetClick = () => {
-    this.setState({
-      from: undefined,
-      to: undefined,
-      isDisabled: false
-    });
     this.props.handleDaysReset();
   };
 
@@ -79,12 +71,14 @@ export default class Dates extends React.Component {
     return (
       <Wrapper>
         <Filter opened={this.props.isOpen} onClick={this.handleIsOpen}>
-          {checkLabels.from && `${checkLabels.from} - `}
-          {checkLabels.to || checkLabels}
+          {checkLabels ? `${checkLabels.from} – ${checkLabels.to}` : "Dates"}
         </Filter>
 
         {this.props.isOpen && (
-          <Modal handleIsOpen={this.handleIsOpen}>
+          <Modal
+            handleIsOpen={this.handleIsOpen}
+            handleResetClick={this.handleResetClick}
+          >
             <Close onClick={this.handleIsOpen} />
             <Title>Dates</Title>
             <Reset onClick={this.handleResetClick}>Reset</Reset>
