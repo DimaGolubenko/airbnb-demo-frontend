@@ -79,8 +79,8 @@ export default class Homes extends React.Component {
             <Dates
               changeIsOpen={this.handleIsOpen}
               isOpen={this.state.isOpen.dates}
-              dateFrom={this.state.dateFrom}
-              dateTo={this.state.dateTo}
+              from={this.state.dateFrom}
+              to={this.state.dateTo}
               handleDaysReset={this.handleDaysReset}
               handleSaveDates={this.handleSaveDates}
             />

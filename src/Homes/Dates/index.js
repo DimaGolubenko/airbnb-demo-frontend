@@ -38,12 +38,17 @@ export default class Dates extends React.Component {
   };
 
   handleDayClick = day => {
-    const range = DateUtils.addDayToRange(day, this.state);
-    this.setState(range);
+    const from = this.props.from;
+    const to = this.props.to;
+    const range = DateUtils.addDayToRange(day, { from, to });
+    this.handleSaveDates(range);
   };
 
-  handleSaveDates = () => {
-    this.props.handleSaveDates(this.state.from, this.state.to);
+  handleSaveDates = range => {
+    this.props.handleSaveDates(range.from, range.to);
+  };
+
+  handleSearch = () => {
     this.handleIsOpen();
   };
 
@@ -62,13 +67,12 @@ export default class Dates extends React.Component {
   };
 
   render() {
-    const from = this.state.from;
-    const to = this.state.to;
+    const from = this.props.from;
+    const to = this.props.to;
     const modifiers = { start: from, end: to };
-    const today = new Date();
     const checkLabels = formatDateLabel(
-      this.state.from,
-      this.state.to,
+      this.props.from,
+      this.props.to,
       this.props.isOpen
     );
 
@@ -108,9 +112,9 @@ export default class Dates extends React.Component {
             />
 
             <Bottom>
-              <Save onClick={this.handleSaveDates}>Save</Save>
+              <Save onClick={this.handleSearch}>Save</Save>
               <Cancel onClick={this.handleResetClick}>Cancel</Cancel>
-              <Apply onClick={this.handleSaveDates}>Apply</Apply>
+              <Apply onClick={this.handleSearch}>Apply</Apply>
             </Bottom>
           </Modal>
         )}
