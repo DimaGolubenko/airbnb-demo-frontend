@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "../styled";
-import { Slider, Card, Link, SeeAll, Image, SliderArrow } from "../styled";
-import StarsList from "../../common/StarsList";
+import { Title as HomesTitle } from "../styled";
+import { Slider, SeeAll, SliderArrow } from "../styled";
+import Card from "../../Homes/Card";
 import img1 from "./homes-1.png";
 import img2 from "./homes-2.png";
 import img3 from "./homes-3.png";
@@ -11,37 +11,12 @@ const Homes = styled.section`
   position: relative;
 `;
 
-const CardTitle = styled.h2`
-  font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  margin-bottom: 0.1rem;
-
-  @media (min-width: 768px) {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
-`;
-
-const Description = styled.p`
-  font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  font-size: 1rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  @media (min-width: 768px) {
-    line-height: 1.2rem;
-    margin-bottom: 0.4rem;
-  }
-`;
-
-const Superhost = styled.span`
-  font-size: 0.75rem;
-  line-height: 1rem;
-`;
-
 const Arrow = SliderArrow.extend`
   top: 8.7rem;
+`;
+
+const Title = styled(HomesTitle)`
+  margin-bottom: 0;
 `;
 
 export default () => {
@@ -49,43 +24,43 @@ export default () => {
     <Homes>
       <Title>
         Homes
-        <SeeAll href="/">See all</SeeAll>
+        <SeeAll to="/Homes">See all</SeeAll>
       </Title>
       <Slider>
         <div className="col-xs-8 col-md-5 col-lg-4">
-          <Card>
-            <Link href="/">
-              <Image src={img1} alt="" />
-              <CardTitle>$82 La Salentina, see, nature & relax</CardTitle>
-            </Link>
-            <Description>Entire house &#183; 9 beds</Description>
-            <StarsList />
-            <Superhost>97 &#183; Superhost</Superhost>
-          </Card>
+          <Card
+            link="/"
+            image={img1}
+            price="$82"
+            title="La Salentina, see, nature & relax"
+            type="house"
+            beds="9 beds"
+            superhost="97"
+          />
         </div>
+
         <div className="col-xs-8 col-md-5 col-lg-4">
-          <Card>
-            <Link href="/">
-              <Image src={img2} alt="" />
-              <CardTitle>
-                $82 Your private 3 bedr. riad and exclusi...
-              </CardTitle>
-            </Link>
-            <Description>Entire house &#183; 5 beds</Description>
-            <StarsList />
-            <Superhost>161 &#183; Superhost</Superhost>
-          </Card>
+          <Card
+            link="/"
+            image={img2}
+            price="$82"
+            title="Your private 3 bedr. riad and exclusi…"
+            type="house"
+            beds="5 beds"
+            superhost="161"
+          />
         </div>
+
         <div className="col-xs-8 col-md-5 col-lg-4">
-          <Card>
-            <Link href="/">
-              <Image src={img3} alt="" />
-              <CardTitle>$200 Dreamy Tropical Tree House</CardTitle>
-            </Link>
-            <Description>Entire treehouse &#183; 1 bed</Description>
-            <StarsList />
-            <Superhost>364 &#183; Superhost</Superhost>
-          </Card>
+          <Card
+            link="/"
+            image={img3}
+            price="$200"
+            title="Dreamy Tropical Tree House"
+            type="treehouse"
+            beds="1 bed"
+            superhost="364"
+          />
         </div>
 
         <Arrow />

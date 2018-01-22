@@ -22,6 +22,7 @@ const Link = styled.a`
 
   @media (min-width: 768px) {
     margin-right: 1rem;
+    font-size: 1rem;
   }
 `;
 

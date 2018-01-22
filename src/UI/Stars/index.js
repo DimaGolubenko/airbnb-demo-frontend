@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import star from "./star.png";
 
-const StarsList = styled.span`
+const Stars = styled.span`
   display: inline-block;
   margin-right: 0.25rem;
 `;
@@ -18,12 +18,12 @@ const Star = styled.span`
 
 export default () => {
   return (
-    <StarsList>
+    <Stars>
       <Star />
       <Star />
       <Star />
       <Star />
       <Star />
-    </StarsList>
+    </Stars>
   );
 };

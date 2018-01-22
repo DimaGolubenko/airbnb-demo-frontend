@@ -113,6 +113,10 @@ export const Copyright = styled.span`
   font-size: 0.75rem;
   line-height: 1rem;
   color: #636363;
+  @media (min-width: 992px) {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
 `;
 
 export const Left = styled.div`
