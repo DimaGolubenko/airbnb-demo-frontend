@@ -19,10 +19,7 @@ export const formatDateLabel = (dateFrom, dateTo, isOpen) => {
       to: "Check out"
     };
   } else {
-    return {
-      from: null,
-      to: "Dates"
-    };
+    return "Dates";
   }
 };
 

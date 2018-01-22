@@ -76,7 +76,7 @@ export default class Dates extends React.Component {
       <Wrapper>
         <Filter opened={this.props.isOpen} onClick={this.handleIsOpen}>
           {checkLabels.from && `${checkLabels.from} - `}
-          {checkLabels.to}
+          {checkLabels.to || checkLabels}
         </Filter>
 
         {this.props.isOpen && (
