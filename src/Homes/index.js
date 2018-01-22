@@ -15,10 +15,6 @@ import img4 from "./homes-4.jpg";
 import img5 from "./homes-5.jpg";
 import img6 from "./homes-6.jpg";
 
-export const ADULT = "adult";
-export const CHILDREN = "children";
-export const INFANTS = "infants";
-
 const Wrapper = styled.div``;
 
 const Cards = styled.section`
@@ -39,8 +35,7 @@ export default class Homes extends React.Component {
   closeAllFilters = () => {
     this.setState({
       isOpen: {
-        dates: false,
-        guests: false
+        dates: false
       }
     });
   };
