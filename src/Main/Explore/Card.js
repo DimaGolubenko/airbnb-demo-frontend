@@ -1,7 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Title } from "../styled";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Card = styled(Link)`
   position: relative;
@@ -41,7 +40,7 @@ const CardTitle = styled.h2`
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0.75rem;
-  font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'CircularAirBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
   color: #383838;
 

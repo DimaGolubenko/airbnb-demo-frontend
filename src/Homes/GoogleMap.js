@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import GoogleMapReact from "google-map-react";
+import React from 'react';
+import styled from 'styled-components';
+import GoogleMapReact from 'google-map-react';
 
 const Wrapper = styled.section`
   display: none;
@@ -26,7 +26,7 @@ const Place = styled.div`
 class GoogleMap extends React.Component {
   static defaultProps = {
     center: [48.239811, 16.375931],
-    zoom: 1
+    zoom: 1,
   };
 
   render() {

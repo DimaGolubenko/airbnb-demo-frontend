@@ -1,13 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import { Image } from "../styled";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+import { Image } from '../styled';
 
 const Card = styled(Link)``;
 
 const City = styled.h2`
   display: block;
-  font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'CircularAirBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
   line-height: 0.9rem;
 

@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import logo from "./logoGray.svg";
+import logo from './logoGray.svg';
 
 const Logo = styled(Link)`
   margin-right: 0.5rem;
@@ -13,10 +13,8 @@ const Img = styled.img`
   height: 1.5rem;
 `;
 
-export default () => {
-  return (
-    <Logo to="/" alt="">
-      <Img src={logo} title="" />
-    </Logo>
-  );
-};
+export default () => (
+  <Logo to="/" alt="">
+    <Img src={logo} title="" />
+  </Logo>
+);

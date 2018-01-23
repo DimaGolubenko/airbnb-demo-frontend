@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import arrow from "./arrow.svg";
+import React from 'react';
+import styled from 'styled-components';
+import arrow from './arrow.svg';
 
 const Pagination = styled.section`
   margin-top: 2.5rem;
@@ -25,8 +25,8 @@ const PageNumber = styled.span`
   font-size: 1rem;
   line-height: 2rem;
   text-align: center;
-  color: ${props => (props.active ? "#fff" : "#0f7276")};
-  background-color: ${props => (props.active ? "#0f7276" : "transparent")};
+  color: ${props => (props.active ? '#fff' : '#0f7276')};
+  background-color: ${props => (props.active ? '#0f7276' : 'transparent')};
   border-radius: 1rem;
   cursor: pointer;
 
@@ -61,7 +61,7 @@ const Count = styled.p`
 export default () => (
   <Pagination>
     <Pages>
-      <PageNumber active={true}>1</PageNumber>
+      <PageNumber active>1</PageNumber>
       <PageNumber>2</PageNumber>
       <PageNumber>3</PageNumber>
       <PageNumber>...</PageNumber>

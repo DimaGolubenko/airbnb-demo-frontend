@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import search from "./search.svg";
+import React from 'react';
+import styled from 'styled-components';
+import search from './search.svg';
 
 const SearchForm = styled.form`
   box-sizing: border-box;
@@ -37,10 +37,8 @@ const Input = styled.input`
   }
 `;
 
-export default () => {
-  return (
-    <SearchForm>
-      <Input type="text" name="search" placeholder="Anywhere  ·  Homes" />
-    </SearchForm>
-  );
-};
+export default () => (
+  <SearchForm>
+    <Input type="text" name="search" placeholder="Anywhere  ·  Homes" />
+  </SearchForm>
+);

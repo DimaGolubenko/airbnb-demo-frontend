@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Logo from "./Logo";
-import SearchForm from "./SearchForm";
-import Nav from "./Nav";
+import React from 'react';
+import styled from 'styled-components';
+import Logo from './Logo';
+import SearchForm from './SearchForm';
+import Nav from './Nav';
 
 const Header = styled.header`
   width: 100%;
@@ -20,16 +20,14 @@ const Wrapper = styled.div`
   background: #fff;
 `;
 
-export default () => {
-  return (
-    <Header>
-      <div className="container">
-        <Wrapper>
-          <Logo />
-          <SearchForm />
-          <Nav />
-        </Wrapper>
-      </div>
-    </Header>
-  );
-};
+export default () => (
+  <Header>
+    <div className="container">
+      <Wrapper>
+        <Logo />
+        <SearchForm />
+        <Nav />
+      </Wrapper>
+    </div>
+  </Header>
+);

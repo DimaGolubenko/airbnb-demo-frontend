@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Link as RouterLink } from "react-router-dom";
-import arrowRight from "../assets/arrow-right.svg";
+import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
+import arrowRight from '../assets/arrow-right.svg';
 
 export const Title = styled.h1`
   display: flex;

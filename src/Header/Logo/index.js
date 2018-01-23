@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import logo from "./logo.svg";
-import arrow from "../../assets/arrow-down.svg";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import logo from './logo.svg';
+import arrow from '../../assets/arrow-down.svg';
 
 const Logo = styled(Link)`
   display: flex;
@@ -34,11 +34,9 @@ const Arrow = styled.button`
   }
 `;
 
-export default () => {
-  return (
-    <Logo to="/">
-      <Img src={logo} />
-      <Arrow />
-    </Logo>
-  );
-};
+export default () => (
+  <Logo to="/">
+    <Img src={logo} />
+    <Arrow />
+  </Logo>
+);

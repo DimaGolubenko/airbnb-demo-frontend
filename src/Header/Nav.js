@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Link as RouterLink } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Nav = styled.nav`
   display: none;
@@ -22,13 +22,11 @@ const Link = styled(RouterLink)`
   text-decoration: none;
 `;
 
-export default () => {
-  return (
-    <Nav>
-      <Link to="/">Become a host</Link>
-      <Link to="/">Help</Link>
-      <Link to="/">Sign Up</Link>
-      <Link to="/">Log In</Link>
-    </Nav>
-  );
-};
+export default () => (
+  <Nav>
+    <Link to="/">Become a host</Link>
+    <Link to="/">Help</Link>
+    <Link to="/">Sign Up</Link>
+    <Link to="/">Log In</Link>
+  </Nav>
+);

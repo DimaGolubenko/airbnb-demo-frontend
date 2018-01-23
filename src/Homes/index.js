@@ -1,19 +1,20 @@
-import React from "react";
-import styled from "styled-components";
-import GoogleMap from "./GoogleMap";
-import { Helmet } from "react-helmet";
-import Card from "./Card";
-import Pagination from "./Pagination";
-import Info from "./Info";
-import Location from "./Location";
-import Dates from "./Dates";
-import { Filter, Filters } from "./styled";
-import img1 from "./homes-1.jpg";
-import img2 from "./homes-2.jpg";
-import img3 from "./homes-3.jpg";
-import img4 from "./homes-4.jpg";
-import img5 from "./homes-5.jpg";
-import img6 from "./homes-6.jpg";
+import React from 'react';
+import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
+
+import GoogleMap from './GoogleMap';
+import Card from './Card';
+import Pagination from './Pagination';
+import Info from './Info';
+import Location from './Location';
+import Dates from './Dates';
+import { Filter, Filters } from './styled';
+import img1 from './homes-1.jpg';
+import img2 from './homes-2.jpg';
+import img3 from './homes-3.jpg';
+import img4 from './homes-4.jpg';
+import img5 from './homes-5.jpg';
+import img6 from './homes-6.jpg';
 
 const Wrapper = styled.div``;
 
@@ -26,40 +27,40 @@ const Cards = styled.section`
 export default class Homes extends React.Component {
   state = {
     isOpen: {
-      dates: false
+      dates: false,
     },
     dateFrom: undefined,
-    dateTo: undefined
+    dateTo: undefined,
   };
 
   closeAllFilters = () => {
     this.setState({
       isOpen: {
-        dates: false
-      }
+        dates: false,
+      },
     });
   };
 
-  handleIsOpen = filter => {
+  handleIsOpen = (filter) => {
     this.closeAllFilters();
     this.setState({
       isOpen: {
-        [filter]: !this.state.isOpen[filter]
-      }
+        [filter]: !this.state.isOpen[filter],
+      },
     });
   };
 
   handleDaysReset = () => {
     this.setState({
       dateFrom: undefined,
-      dateTo: undefined
+      dateTo: undefined,
     });
   };
 
   handleSaveDates = (dateFrom, dateTo) => {
     this.setState({
-      dateFrom: dateFrom,
-      dateTo: dateTo
+      dateFrom,
+      dateTo,
     });
   };
 
@@ -80,10 +81,10 @@ export default class Homes extends React.Component {
               handleSaveDates={this.handleSaveDates}
             />
 
-            <Filter isHidden={true}>Guests</Filter>
-            <Filter isHidden={true}>Room type</Filter>
-            <Filter isHidden={true}>Price</Filter>
-            <Filter isHidden={true}>Instant book</Filter>
+            <Filter isHidden>Guests</Filter>
+            <Filter isHidden>Room type</Filter>
+            <Filter isHidden>Price</Filter>
+            <Filter isHidden>Instant book</Filter>
             <Filter>More filters</Filter>
           </div>
         </Filters>

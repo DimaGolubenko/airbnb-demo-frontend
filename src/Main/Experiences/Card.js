@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Stars from "../../UI/Stars";
-import { Image } from "../styled";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Stars from '../../UI/Stars';
+import { Image } from '../styled';
 
 const Card = styled.div``;
 

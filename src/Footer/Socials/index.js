@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import facebook from "./facebook.svg";
-import twitter from "./twitter.svg";
-import instagram from "./instagram.svg";
+import React from 'react';
+import styled from 'styled-components';
+import facebook from './facebook.svg';
+import twitter from './twitter.svg';
+import instagram from './instagram.svg';
 
 const Socials = styled.div`
   display: flex;
@@ -38,12 +38,10 @@ const Instagram = Icon.extend`
   background-image: url(${instagram});
 `;
 
-export default () => {
-  return (
-    <Socials>
-      <Facebook href="/" />
-      <Twitter href="/" />
-      <Instagram href="/" />
-    </Socials>
-  );
-};
+export default () => (
+  <Socials>
+    <Facebook href="/" />
+    <Twitter href="/" />
+    <Instagram href="/" />
+  </Socials>
+);
