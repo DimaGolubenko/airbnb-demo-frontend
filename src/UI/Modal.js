@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Portal as ReactPortal } from "react-portal";
+import React from 'react';
+import styled from 'styled-components';
+import { Portal as ReactPortal } from 'react-portal';
 
 const Portal = styled(ReactPortal)`
   @media (min-width: 768px) {
@@ -9,8 +9,8 @@ const Portal = styled(ReactPortal)`
 `;
 
 const Popup = styled.div`
-  position: ${props => (props.fixed ? "fixed" : "absolute")};
-  bottom: ${props => (props.fixed ? "0" : "auto")};
+  position: ${props => (props.fixed ? 'fixed' : 'absolute')};
+  bottom: ${props => (props.fixed ? '0' : 'auto')};
   top: 0;
   left: 0;
   right: 0;
@@ -61,16 +61,14 @@ const Dropdown = styled.div`
   }
 `;
 
-export default props => {
-  return (
-    <React.Fragment>
-      <Modal>
-        <Overlay onClick={props.handleIsOpen} />
-        <Dropdown>{props.children}</Dropdown>
-      </Modal>
-      <Portal>
-        <Popup fixed={props.isFixed}>{props.children}</Popup>
-      </Portal>
-    </React.Fragment>
-  );
-};
+export default props => (
+  <React.Fragment>
+    <Modal>
+      <Overlay onClick={props.handleIsOpen} />
+      <Dropdown>{props.children}</Dropdown>
+    </Modal>
+    <Portal>
+      <Popup fixed={props.isFixed}>{props.children}</Popup>
+    </Portal>
+  </React.Fragment>
+);

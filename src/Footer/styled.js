@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import arrow from "../assets/arrow-down.svg";
+import styled from 'styled-components';
+import arrow from '../assets/arrow-down.svg';
 
 export const Form = styled.form`
   position: relative;

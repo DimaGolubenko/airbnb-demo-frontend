@@ -1,6 +1,5 @@
-import React from "react";
-import styled from "styled-components";
-import close from "../assets/close.svg";
+import styled from 'styled-components';
+import close from '../assets/close.svg';
 
 export const Wrapper = styled.div`
   display: inline-block;
@@ -26,12 +25,12 @@ export const Cards = styled.section`
 `;
 
 export const Filter = styled.button`
-  display: ${props => (props.isHidden ? "none" : "inline")};
+  display: ${props => (props.isHidden ? 'none' : 'inline')};
   padding: 0.4rem 1rem;
   margin-right: 0.75rem;
   font-size: 0.9rem;
-  color: ${props => (props.opened ? "#fff" : "#383838")};
-  background-color: ${props => (props.opened ? "#008489" : "transparent")};
+  color: ${props => (props.opened ? '#fff' : '#383838')};
+  background-color: ${props => (props.opened ? '#008489' : 'transparent')};
   box-sizing: border-box;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 0.25rem;
@@ -140,7 +139,7 @@ const Button = styled.button`
   display: none;
   font-size: 1rem;
   padding: 1.5rem 2rem;
-  font-family: "CircularAirBook", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'CircularAirBook', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-top: 0.5rem;
   color: #636363;
   background-color: transparent;

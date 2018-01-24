@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import ReactDayPicker from "react-day-picker";
-import arrow from "./arrow.svg";
-import arrowDropdown from "../../assets/arrowDropdown.svg";
+import styled from 'styled-components';
+import ReactDayPicker from 'react-day-picker';
+import arrow from './arrow.svg';
+import arrowDropdown from '../../assets/arrowDropdown.svg';
 
 export const DayPicker = styled(ReactDayPicker)`
   .DayPicker {
@@ -173,7 +173,7 @@ export const DayPicker = styled(ReactDayPicker)`
   }
   .DayPicker-Week:first-child,
   .DayPicker-Week:nth-child(2) {
-    color: ${props => (props.isFirst ? "#cbcbcb" : "#383838")};
+    color: ${props => (props.isFirst ? '#cbcbcb' : '#383838')};
   }
 `;
 
@@ -197,8 +197,8 @@ export const Check = styled.span`
   line-height: 1.5rem;
   font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
-  color: ${props => (props.isChecked ? "#0f7276" : "inherit")};
-  border-bottom: ${props => (props.isChecked ? "2px solid #0f7276" : "none")};
+  color: ${props => (props.isChecked ? '#0f7276' : 'inherit')};
+  border-bottom: ${props => (props.isChecked ? '2px solid #0f7276' : 'none')};
 `;
 
 export const CheckIn = styled(Check)``;

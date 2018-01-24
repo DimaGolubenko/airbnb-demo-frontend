@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import location from "../assets/location.svg";
+import React from 'react';
+import styled from 'styled-components';
+import location from '../assets/location.svg';
 
 const Wrapper = styled.div`
   display: flex;
