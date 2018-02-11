@@ -8,6 +8,10 @@ import Pagination from './Pagination';
 import Info from './Info';
 import Location from './Location';
 import Dates from './Dates';
+import Guests from './Guests';
+import RoomType from './RoomType';
+import Price from './Price';
+import InstantBook from './InstantBook';
 import { Filter, Filters } from './styled';
 import img1 from './homes-1.jpg';
 import img2 from './homes-2.jpg';
@@ -28,15 +32,42 @@ export default class Homes extends React.Component {
   state = {
     isOpen: {
       dates: false,
+      guests: false,
+      roomType: false,
+      price: false,
+      instantBook: false,
     },
+    guests: {
+      adults: 1,
+      children: 0,
+      infants: 0,
+    },
+    roomType: {
+      entireHome: false,
+      privateRoom: false,
+      sharedRoom: false,
+    },
+    roomTypeTitle: 'Room type',
+    price: { from: 10, to: 1000 },
     dateFrom: undefined,
     dateTo: undefined,
+    isActiveCheckboxInstantBook: false,
+  };
+
+  setRoomTypeTitle = (title) => {
+    this.setState({
+      roomTypeTitle: title,
+    });
   };
 
   closeAllFilters = () => {
     this.setState({
       isOpen: {
         dates: false,
+        guests: false,
+        roomType: false,
+        price: false,
+        instantBook: false,
       },
     });
   };
@@ -64,6 +95,63 @@ export default class Homes extends React.Component {
     });
   };
 
+  decrementGuests = (type, count) => {
+    this.setState({ guests: { ...this.state.guests, [type]: [count] } });
+  };
+
+  incrementGuests = (type, count) => {
+    this.setState({
+      ...this.state,
+      guests: { ...this.state.guests, [type]: [count] },
+    });
+  };
+
+  handleGuestsClear = () => {
+    this.setState({
+      guests: {
+        adult: 0,
+        children: 0,
+        infants: 0,
+      },
+    });
+  };
+
+  checkRoomType = (type, isChecked) => {
+    this.setState({
+      roomType: {
+        ...this.state.roomType,
+        [type]: !isChecked,
+      },
+    });
+  };
+
+  handleRoomTypeClear = () => {
+    this.setState({
+      roomType: {
+        entireHome: false,
+        privateRoom: false,
+        sharedRoom: false,
+      },
+    });
+    this.handleIsOpen();
+  };
+
+  updatePrice = (price) => {
+    this.setState({ price });
+  };
+
+  toggleInstantBookActivity = () => {
+    this.setState({
+      isActiveCheckboxInstantBook: !this.state.isActiveCheckboxInstantBook,
+    });
+  };
+
+  resetInstantBookFilter = () => {
+    this.setState({
+      isActiveCheckboxInstantBook: false,
+    });
+  };
+
   render() {
     return (
       <Wrapper>
@@ -73,18 +161,52 @@ export default class Homes extends React.Component {
         <Filters>
           <div className="container">
             <Dates
-              changeIsOpen={this.handleIsOpen}
               isOpen={this.state.isOpen.dates}
               from={this.state.dateFrom}
               to={this.state.dateTo}
-              handleDaysReset={this.handleDaysReset}
-              handleSaveDates={this.handleSaveDates}
+              resetDates={this.handleDaysReset}
+              saveDates={this.handleSaveDates}
+              toggleVisibility={() => this.handleIsOpen('dates')}
             />
 
-            <Filter isHidden>Guests</Filter>
-            <Filter isHidden>Room type</Filter>
-            <Filter isHidden>Price</Filter>
-            <Filter isHidden>Instant book</Filter>
+            <Guests
+              isOpen={this.state.isOpen.guests}
+              guests={this.state.guests}
+              decrementGuests={this.decrementGuests}
+              incrementGuests={this.incrementGuests}
+              handleGuestsClear={this.handleGuestsClear}
+              toggleVisibility={() => this.handleIsOpen('guests')}
+            />
+
+            <RoomType
+              isOpen={this.state.isOpen.roomType}
+              roomType={this.state.roomType}
+              filterTitle={this.state.roomTypeTitle}
+              checkRoomType={this.checkRoomType}
+              setFilterTitle={this.setRoomTypeTitle}
+              handleRoomTypeClear={this.handleRoomTypeClear}
+              toggleVisibility={() => this.handleIsOpen('roomType')}
+            />
+
+            <Price
+              isHidden
+              isOpen={this.state.isOpen.price}
+              min={10}
+              max={1000}
+              price={this.state.price}
+              updatePrice={this.updatePrice}
+              toggleVisibility={() => this.handleIsOpen('price')}
+            />
+
+            <InstantBook
+              isHidden
+              isOpen={this.state.isOpen.instantBook}
+              isActive={this.state.isActiveCheckboxInstantBook}
+              toggleVisibility={() => this.handleIsOpen('instantBook')}
+              toggleActivity={this.toggleInstantBookActivity}
+              reset={this.resetInstantBookFilter}
+            />
+
             <Filter>More filters</Filter>
           </div>
         </Filters>

@@ -36,7 +36,7 @@ export const DayPicker = styled(ReactDayPicker)`
     border-collapse: collapse;
     border-spacing: 0;
     user-select: none;
-    margin: 0 1rem;
+    margin: 0 0.25rem;
     margin-top: 1rem;
     text-align: center;
 
@@ -94,8 +94,7 @@ export const DayPicker = styled(ReactDayPicker)`
     font-size: 1.2rem;
     line-height: 2rem;
     margin-bottom: 1rem;
-    font-family: "CircularAirBold", "Helvetica Neue", Helvetica, Arial,
-      sans-serif;
+    font-family: 'CircularAirBold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-align: center;
   }
 
@@ -195,8 +194,7 @@ export const Row = styled.div`
 export const Check = styled.span`
   font-size: 1.1rem;
   line-height: 1.5rem;
-  font-family: "CircularAirLight", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: 'CircularAirLight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: ${props => (props.isChecked ? '#0f7276' : 'inherit')};
   border-bottom: ${props => (props.isChecked ? '2px solid #0f7276' : 'none')};
 `;

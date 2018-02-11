@@ -11,64 +11,60 @@ export default class Dates extends React.Component {
     isCheckOut: false,
   };
 
-  handleIsOpen = () => {
-    this.props.changeIsOpen('dates');
-  };
-
-  handleResetClick = () => {
-    this.props.handleDaysReset();
-  };
-
-  handleDayClick = (day) => {
-    const { from, to } = this.props;
-    const range = DateUtils.addDayToRange(day, { from, to });
-    this.handleSaveDates(range);
-  };
-
   handleSaveDates = (range) => {
     this.props.handleSaveDates(range.from, range.to);
   };
 
-  handleSearch = () => {
-    this.handleIsOpen();
+  handleIsOpen = () => {
+    this.props.toggleVisibility();
   };
 
-  activeCheckIn = () => {
-    this.setState({
-      isCheckIn: true,
-      isCheckOut: false,
-    });
+  handleResetClick = () => {
+    const { resetDates, toggleVisibility } = this.props;
+    resetDates();
+    toggleVisibility();
   };
 
-  activeCheckOut = () => {
-    this.setState({
-      isCheckIn: false,
-      isCheckOut: true,
-    });
+  handleDayClick = (day) => {
+    const { from, to, saveDates } = this.props;
+    const range = DateUtils.addDayToRange(day, { from, to });
+    saveDates(range.from, range.to);
+  };
+
+  toggleCheck = (isChecked) => {
+    if (!isChecked) {
+      this.setState({
+        isCheckIn: !this.state.isCheckIn,
+        isCheckOut: !this.state.isCheckOut,
+      });
+    }
   };
 
   render() {
-    const { from, to } = this.props;
+    const {
+      isOpen, from, to, toggleVisibility,
+    } = this.props;
+    const { isCheckIn, isCheckOut } = this.state;
     const modifiers = { start: from, end: to };
     const checkLabels = formatDateLabel(this.props.from, this.props.to, this.props.isOpen);
 
     return (
       <Wrapper>
-        <Filter opened={this.props.isOpen} onClick={this.handleIsOpen}>
+        <Filter opened={isOpen} onClick={toggleVisibility}>
           {checkLabels ? `${checkLabels.from} – ${checkLabels.to}` : 'Dates'}
         </Filter>
 
-        {this.props.isOpen && (
-          <Modal handleIsOpen={this.handleIsOpen} handleResetClick={this.handleResetClick}>
-            <Close onClick={this.handleIsOpen} />
+        {isOpen && (
+          <Modal handleIsOpen={toggleVisibility} handleResetClick={this.handleResetClick}>
+            <Close onClick={toggleVisibility} />
             <Title>Dates</Title>
             <Reset onClick={this.handleResetClick}>Reset</Reset>
             <Row>
-              <CheckIn isChecked={this.state.isCheckIn} onClick={this.activeCheckIn}>
+              <CheckIn isChecked={isCheckIn} onClick={() => this.toggleCheck(isCheckIn)}>
                 {checkLabels.from}
               </CheckIn>
               <Arrow />
-              <CheckOut isChecked={this.state.isCheckOut} onClick={this.activeCheckOut}>
+              <CheckOut isChecked={isCheckOut} onClick={() => this.toggleCheck(isCheckOut)}>
                 {checkLabels.to}
               </CheckOut>
             </Row>
@@ -81,9 +77,9 @@ export default class Dates extends React.Component {
             />
 
             <Bottom>
-              <Save onClick={this.handleSearch}>Save</Save>
+              <Save onClick={toggleVisibility}>Save</Save>
               <Cancel onClick={this.handleResetClick}>Cancel</Cancel>
-              <Apply onClick={this.handleSearch}>Apply</Apply>
+              <Apply onClick={toggleVisibility}>Apply</Apply>
             </Bottom>
           </Modal>
         )}

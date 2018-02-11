@@ -53,6 +53,7 @@ const Dropdown = styled.div`
     position: absolute;
     margin-top: 0.5rem;
     left: 0;
+    padding: 1rem;
     background-color: #fff;
     border: 1px solid rgba(72, 72, 72, 0.2);
     box-sizing: border-box;

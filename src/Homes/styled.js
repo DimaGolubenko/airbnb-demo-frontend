@@ -138,9 +138,10 @@ export const Save = styled.button`
 const Button = styled.button`
   display: none;
   font-size: 1rem;
-  padding: 1.5rem 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
   font-family: 'CircularAirBook', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   color: #636363;
   background-color: transparent;
   border: none;
@@ -151,8 +152,13 @@ const Button = styled.button`
   }
 `;
 
-export const Cancel = styled(Button)``;
+export const Cancel = styled(Button)`
+  padding-left: 1rem;
+  padding-right: 2rem;
+`;
 
 export const Apply = styled(Button)`
+  padding-left: 2rem;
+  padding-right: 1rem;
   color: #0f7276;
 `;
